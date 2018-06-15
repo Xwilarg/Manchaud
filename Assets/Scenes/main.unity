@@ -1472,6 +1472,10 @@ MonoBehaviour:
   firstNode: {fileID: 1049157187}
   speed: 75
   step: 1
+  minTimeJump: 3
+  maxTimeJump: 8
+  jumpTime: 0.5
+  jumpForce: 20
 --- !u!1 &1266698446
 GameObject:
   m_ObjectHideFlags: 0
