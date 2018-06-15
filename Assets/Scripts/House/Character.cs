@@ -31,7 +31,7 @@ public class Character : MonoBehaviour {
                 if (room.GetDown() != null && room.GetDown() != oldRoom)
                     rb.MovePosition(room.GetDown().transform.position - offset);
                 else if (room.GetUp() != null && room.GetUp() != oldRoom)
-                    rb.MovePosition(room.GetDown().transform.position);
+                    rb.MovePosition(room.GetDown().transform.position - offset);
                 tookStairs = true;
             }
         }
