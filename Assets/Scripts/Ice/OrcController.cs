@@ -16,13 +16,14 @@ public class OrcController : MonoBehaviour {
     [SerializeField]
     private float maxTimeJump;
     [SerializeField]
-    private float jumpTime;
-    [SerializeField]
     private float jumpForce;
 
     private float attackTimer;
     private float? jumpTimer;
     private float? killTimer;
+    private Vector2 jumpDir;
+
+    private const float jumpTime = 0.5f;
 
     private GameObject player;
     private Node nextNode;
@@ -69,6 +70,7 @@ public class OrcController : MonoBehaviour {
         {
             SetAttackTimer();
             jumpTimer = 2f;
+            jumpDir = (transform.position - player.transform.position).normalized;
         }
         if (jumpTimer == null)
         {
@@ -85,8 +87,7 @@ public class OrcController : MonoBehaviour {
             jumpTimer -= Time.deltaTime;
             if (jumpTimer < 0f)
             {
-                Vector2 dir = (transform.position - player.transform.position).normalized;
-                rb.AddForce(-dir * jumpForce, ForceMode2D.Impulse);
+                rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
                 killTimer = jumpTime;
             }
         }
