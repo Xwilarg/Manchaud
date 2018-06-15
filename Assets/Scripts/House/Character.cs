@@ -5,26 +5,25 @@ public class Character : MonoBehaviour {
 
     private Rigidbody2D rb;
     private bool stairs;
+    [SerializePrivateVariables]
+    private Collider room;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (true/*other.GetComponent<ScriptableObject>().HasStairs()*/)
-            stairs = true;
-        else
-            stairs = false;
+        room = other;
     }
 
     // Use this for initialization
     private void Start () {
-        stairs = false;
+        stairs = true;
         rb = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	private void Update () {
         if (stairs)
-            rb.velocity = new Vector2(0, 2);
+
         else
-            rb.velocity = new Vector2(5, 0);
+            rb.velocity = new Vector2(5 * Time.deltaTime, 0); // x > 0 right || x < 0 left
 	}
 }
