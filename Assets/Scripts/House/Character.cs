@@ -5,10 +5,10 @@ public class Character : MonoBehaviour {
 
     private Rigidbody2D rb;
     private bool stairs;
-    [SerializePrivateVariables]
-    private Collider room;
+    [SerializeField]
+    private Collider2D room;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         room = other;
     }
@@ -22,7 +22,7 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	private void Update () {
         if (stairs)
-
+            rb.MovePosition(room.GetComponent<Room>().Down.GetComponent<Rigidbody2D>().position);
         else
             rb.velocity = new Vector2(5 * Time.deltaTime, 0); // x > 0 right || x < 0 left
 	}
