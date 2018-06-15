@@ -6,7 +6,7 @@ public class Character : MonoBehaviour {
     {
         get
         {
-            return collider;
+            return GetComponent<Collider>();
         }
 
         set
