@@ -21,9 +21,9 @@ public class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void Update () {
-        if (stairs)
+        //if (stairs)
 
-        else
-            rb.velocity = new Vector2(5 * Time.deltaTime, 0); // x > 0 right || x < 0 left
+        //else
+        //    rb.velocity = new Vector2(5 * Time.deltaTime, 0); // x > 0 right || x < 0 left
 	}
 }
