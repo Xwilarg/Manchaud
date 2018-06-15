@@ -938,7 +938,8 @@ MonoBehaviour:
   speed: 100
   spriteLeft: {fileID: 21300000, guid: c527876a77bd5624f9e0f80aff5c74cc, type: 3}
   spriteRight: {fileID: 21300000, guid: 7a5494445903fe043892859d3c31e86e, type: 3}
-  offset: {x: 0, y: 0.2, z: 0}
+  firstFloorOffset: {x: 0, y: 0.4, z: 0}
+  secondFloorOffset: {x: 0, y: 0.2, z: 0}
 --- !u!50 &724072950
 Rigidbody2D:
   serializedVersion: 4
@@ -1010,12 +1011,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724072947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.82, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1266698447}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &807374361
 Prefab:
@@ -1527,6 +1528,7 @@ Transform:
   - {fileID: 2144500334}
   - {fileID: 1533476005}
   - {fileID: 2007744451}
+  - {fileID: 724072952}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

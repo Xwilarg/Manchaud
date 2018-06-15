@@ -13,12 +13,12 @@ public class Character : MonoBehaviour {
     private float speed;
     [SerializeField]
     private Sprite spriteLeft, spriteRight;
-    private SpriteRenderer renderer;
-    private int direction;
+    private SpriteRenderer sr;
+    private Directions direction;
     private bool tookStairs;
     private enum Directions { LEFT, RIGHT };
     [SerializeField]
-    private Vector3 offset;
+    private Vector3 firstFloorOffset, secondFloorOffset;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,9 +29,9 @@ public class Character : MonoBehaviour {
             if (tookStairs == false && room.HasStairs())
             {
                 if (room.GetDown() != null && room.GetDown() != oldRoom)
-                    rb.MovePosition(room.GetDown().transform.position - offset);
+                    rb.MovePosition(room.GetDown().transform.position - firstFloorOffset);
                 else if (room.GetUp() != null && room.GetUp() != oldRoom)
-                    rb.MovePosition(room.GetDown().transform.position - offset);
+                    rb.MovePosition(room.GetUp().transform.position - secondFloorOffset);
                 tookStairs = true;
             }
         }
@@ -40,23 +40,23 @@ public class Character : MonoBehaviour {
     private void Start () {
         stairs = room.HasStairs();
         rb = GetComponent<Rigidbody2D>();
-        renderer = GetComponent<SpriteRenderer>();
-        direction = (int)Directions.RIGHT;
+        sr = GetComponent<SpriteRenderer>();
+        direction = Directions.RIGHT;
         tookStairs = true;
 	}
 	
 	private void Update () {
             tookStairs = false;
-        if (direction != (int)Directions.LEFT && room.GetLeft() != null)
+        if (direction != Directions.LEFT && room.GetLeft() != null)
         {
-            direction = (int)Directions.LEFT;
-            renderer.sprite = spriteLeft;
+            direction = Directions.LEFT;
+            sr.sprite = spriteLeft;
             rb.velocity = new Vector2(-speed * Time.deltaTime, 0); // x > 0 right || x < 0 left
         }
-        else if (direction != (int)Directions.RIGHT && room.GetRight() != null)
+        else if (direction != Directions.RIGHT && room.GetRight() != null)
         {
-            direction = (int)Directions.RIGHT;
-            renderer.sprite = spriteRight;
+            direction = Directions.RIGHT;
+            sr.sprite = spriteRight;
             rb.velocity = new Vector2(speed * Time.deltaTime, 0); // x > 0 right || x < 0 left
         }
     }
