@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 362260982}
   m_Layer: 0
   m_Name: Bedroom
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e6c86750f38864285e5952dec33626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stairs: 0
+  stairs: 1
   up: {fileID: 0}
   down: {fileID: 1533476006}
   left: {fileID: 458543702}
@@ -341,7 +341,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.8891641, y: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 458543703}
   m_Layer: 0
   m_Name: Office
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -568,7 +568,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.859851, y: 0}
@@ -925,8 +925,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c943dce6d4118478bec4a3baf880ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 0}
-  speed: 0
+  room: {fileID: 362260981}
+  oldRoom: {fileID: 0}
+  speed: 100
+  spriteLeft: {fileID: 21300000, guid: c527876a77bd5624f9e0f80aff5c74cc, type: 3}
+  spriteRight: {fileID: 21300000, guid: 7a5494445903fe043892859d3c31e86e, type: 3}
+  offset: {x: 0, y: 0.2, z: 0}
 --- !u!50 &724072950
 Rigidbody2D:
   serializedVersion: 4
@@ -999,7 +1003,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724072947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.82, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1724,7 +1728,7 @@ GameObject:
   - component: {fileID: 1533476007}
   m_Layer: 0
   m_Name: LivingRoom
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1800,7 +1804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e6c86750f38864285e5952dec33626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stairs: 0
+  stairs: 1
   up: {fileID: 0}
   down: {fileID: 362260981}
   left: {fileID: 2144500335}
@@ -1814,7 +1818,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.87939316, y: 0}
@@ -2278,7 +2282,7 @@ GameObject:
   - component: {fileID: 2144500336}
   m_Layer: 0
   m_Name: Kitchen
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2367,7 +2371,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.88916403, y: 0}
