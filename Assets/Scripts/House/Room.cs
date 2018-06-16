@@ -36,13 +36,13 @@ public class Room : MonoBehaviour {
         }
         else
         {
-            if (temperature < 20f)
+            if (temperature < 15f)
                 radiator.SwitchOn();
         }
         foreach (SwitchLight door in doors)
         {
             if (door.IsOn())
-                temperature -= 2.5f * Time.deltaTime;
+                temperature -= 2.2f * Time.deltaTime;
         }
     }
 
