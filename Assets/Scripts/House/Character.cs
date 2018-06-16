@@ -25,10 +25,12 @@ public class Character : MonoBehaviour
         {
             oldRoom = room;
             room = other.GetComponent<Room>();
-            SwitchLight[] devices = room.GetComponentsInChildren<SwitchLight>();
-            foreach (SwitchLight device in devices)
+            Transform[] devices = room.GetComponentsInChildren<Transform>();
+            foreach (Transform device in devices)
             {
-                device.SwitchOn();
+                SwitchLight sl = device.GetComponent<SwitchLight>();
+                if (sl != null)
+                    sl.SwitchOn();
             }
             if (!tookStairs && room.HasStairs())
             {
