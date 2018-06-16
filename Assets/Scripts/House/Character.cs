@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -12,7 +13,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    private Sprite spriteLeft, spriteRight;
+    private RuntimeAnimatorController controllerLeft, controllerRight;
+    private Animator animator;
     private SpriteRenderer sr;
     private Directions direction;
     private enum Directions { LEFT, RIGHT }
@@ -58,7 +60,7 @@ public class Character : MonoBehaviour
             if (Random.Range(1, 100) < switchOnRate)
             {
                 SwitchLight sl = device.GetComponent<SwitchLight>();
-                if (sl != null)
+                if (sl != null && sl.GetObject() != SwitchLight.Object.RADIATOR)
                     sl.SwitchOn();
             }
         }
@@ -80,6 +82,7 @@ public class Character : MonoBehaviour
     private void Start () {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         direction = Directions.RIGHT;
         audioSrc = GetComponent<AudioSource>();
         step = 0;
@@ -104,13 +107,13 @@ public class Character : MonoBehaviour
         if (direction != Directions.LEFT && room.GetLeft() != null)
         {
             direction = Directions.LEFT;
-            sr.sprite = spriteLeft;
+            animator.runtimeAnimatorController = controllerLeft;
             rb.velocity = new Vector2(-speed * Time.deltaTime, 0); // speed < 0 == left
         }
         else if (direction != Directions.RIGHT && room.GetRight() != null)
         {
             direction = Directions.RIGHT;
-            sr.sprite = spriteRight;
+            animator.runtimeAnimatorController = controllerRight;
             rb.velocity = new Vector2(speed * Time.deltaTime, 0); // speed > 0 == right
         }
     }

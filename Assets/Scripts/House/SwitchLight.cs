@@ -23,7 +23,10 @@ public class SwitchLight : MonoBehaviour
     private float secConso;
     private float currConso;
 
-    private enum Object
+    public Object GetObject() { return (obj); }
+    public bool IsOn() { return (isOn); }
+
+    public enum Object
     {
         NOCONSO,
         FRIDGE,
@@ -96,10 +99,13 @@ public class SwitchLight : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isOn)
-            SwitchOff();
-        else
-            SwitchOn();
+        if (obj != Object.RADIATOR)
+        {
+            if (isOn)
+                SwitchOff();
+            else
+                SwitchOn();
+        }
     }
 
     public void SwitchOn()
