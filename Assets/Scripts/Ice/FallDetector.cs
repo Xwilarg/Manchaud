@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class FallDetector : MonoBehaviour {
-
+public class FallDetector : MonoBehaviour
+{
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

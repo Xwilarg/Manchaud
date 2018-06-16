@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Room
+  - Node
   layers:
   - Default
   - TransparentFX
@@ -46,6 +48,12 @@ TagManager:
     locked: 0
   - name: HouseBackground
     uniqueID: 1075093149
+    locked: 0
+  - name: HouseMaterialBackground
+    uniqueID: 395789959
+    locked: 0
+  - name: HouseMaterial
+    uniqueID: 2910264447
     locked: 0
   - name: Default
     uniqueID: 0

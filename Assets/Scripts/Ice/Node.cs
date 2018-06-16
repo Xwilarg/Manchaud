@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class Node : MonoBehaviour {
-
+public class Node : MonoBehaviour
+{
     [SerializeField]
     private Node next;
 
