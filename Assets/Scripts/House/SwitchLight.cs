@@ -16,7 +16,6 @@ public class SwitchLight : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("RE");
         isOn = !isOn;
         currSprite.sprite = (isOn) ? (spriteOn) : (spriteOff);
     }
