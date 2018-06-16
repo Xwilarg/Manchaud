@@ -44,9 +44,10 @@ public class NarvalController : MonoBehaviour
             timerAim -= Time.deltaTime;
             if (timerAim < 0f)
             {
+                Vector3 pos = curr.transform.position;
                 Destroy(curr);
                 timerAim = null;
-                curr = Instantiate(hornNarval, playerPos.position, Quaternion.identity);
+                curr = Instantiate(hornNarval, pos, Quaternion.identity);
                 timerRest = 2f;
             }
         }

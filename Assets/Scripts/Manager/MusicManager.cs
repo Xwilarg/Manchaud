@@ -7,15 +7,10 @@ public class MusicManager : MonoBehaviour
     private AudioClip lowCold, mediumCold, highCold;
     [SerializeField]
     private AudioClip lowHot, mediumHot, highHot;
-
+    [SerializeField]
     private AudioSource[] sources;
 
     private int SourceAlternance = 0;
-
-    private void Start()
-    {
-        sources = GetComponents<AudioSource>();
-    }
 
     public enum Temp
     {
@@ -32,33 +27,36 @@ public class MusicManager : MonoBehaviour
 
     public void Play(Size size, float volume)
     {
-        SetVolume(size, volume);
+        SetVolume(size, volume, true);
         sources[0].Play();
         sources[1].Play();
     }
     
-    public void SetVolume(Size size, float volume)
+    public void SetVolume(Size size, float volume, bool change = false)
     {
-        // Set cold size
-        if (size == Size.High)
-            CrossFade(0.5f, sources[SourceAlternance], sources[SourceAlternance+1], highCold);
-        else if (size == Size.Medium)
-            CrossFade(0.5f, sources[SourceAlternance], sources[SourceAlternance+1], mediumCold);
-        else
-            CrossFade(0.5f, sources[SourceAlternance], sources[SourceAlternance+1], lowCold);
+        Debug.Log(SourceAlternance);
+        if (change)
+        {
+            // Set cold size
+            if (size == Size.High)
+                CrossFade(0.5f, sources[SourceAlternance], sources[SourceAlternance + 1], highCold);
+            else if (size == Size.Medium)
+                CrossFade(0.5f, sources[SourceAlternance], sources[SourceAlternance + 1], mediumCold);
+            else
+                CrossFade(0.5f, sources[SourceAlternance], sources[SourceAlternance + 1], lowCold);
+
+            // Set hot size
+            if (size == Size.High)
+                CrossFade(0.5f, sources[SourceAlternance + 2], sources[(SourceAlternance + 3) % 4], highHot);
+            else if (size == Size.Medium)
+                CrossFade(0.5f, sources[SourceAlternance + 2], sources[(SourceAlternance + 3) % 4], mediumHot);
+            else
+                CrossFade(0.5f, sources[SourceAlternance + 2], sources[(SourceAlternance + 3) % 4], lowHot);
+        }
         // Intensity gauge is  = 1- volume
         sources[0].volume = 1f - volume;
-
-        // Set hot size
-        if (size == Size.High)
-            CrossFade(0.5f, sources[SourceAlternance+2], sources[(SourceAlternance + 3) % 4], highHot);
-        else if (size == Size.Medium)
-            CrossFade(0.5f, sources[SourceAlternance+2], sources[(SourceAlternance + 3) % 4], mediumHot);
-        else
-            CrossFade(0.5f, sources[SourceAlternance+2], sources[(SourceAlternance + 3) % 4], lowHot);
         // Gauge intensity is = volume
         sources[1].volume = volume;
-
     }
 
     private void CrossFade(float duration, AudioSource audioOut, AudioSource audioIn, AudioClip audioFileIn)
@@ -68,7 +66,6 @@ public class MusicManager : MonoBehaviour
         FadeIn(duration, audioIn);
         // Update counter
         SourceAlternance = (SourceAlternance + 1) % 2;
-
     }
 
     private void FadeOut(float duration, AudioSource audioOut)
@@ -89,7 +86,7 @@ public class MusicManager : MonoBehaviour
         // Linearly Fade In audio
         while (audioIn.volume < 0.9)
         {
-            audioIn.volume = Mathf.Lerp(audioIn.volume, 0.0f, duration * Time.deltaTime);
+            audioIn.volume = Mathf.Lerp(audioIn.volume, 1.0f, duration * Time.deltaTime);
         }
         // Set volume to 1 to finish the FadeIn
         audioIn.volume = 1.0f;
