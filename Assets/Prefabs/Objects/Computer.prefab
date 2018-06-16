@@ -35,8 +35,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409111277239954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07915616, y: -0.03705731, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,8 +80,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteOn: {fileID: 21300000, guid: 0200fa0c1172a7f479e4fe728feabd39, type: 3}
   spriteOff: {fileID: 21300000, guid: 4a53de99fde07514b99d8155eab6cb4b, type: 3}
-  additonalSprites: []
-  additonalStats: []
+  additonalSprites:
+  - {fileID: 21300000, guid: 03cc692b2f388f6428909d8671631cb7, type: 3}
+  - {fileID: 21300000, guid: 2b92702f83e529749a5ebb175d3b5ef7, type: 3}
+  additonalStats:
+  - 15
+  - 3
   type: 4
   clipOn: {fileID: 0}
   clipOff: {fileID: 0}
@@ -118,8 +122,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1384702849
-  m_SortingLayer: -1
+  m_SortingLayerID: -1206166025
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a53de99fde07514b99d8155eab6cb4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
