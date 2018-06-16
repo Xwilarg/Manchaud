@@ -36,7 +36,7 @@ public class OrcController : MonoBehaviour
     private Vector2 jumpDir;
     private Vector2 lastMousePos;
 
-    private const float jumpTime = 0.5f;
+    private const float jumpTime = 1.0f;
 
     private GameObject player;
     private Node nextNode;

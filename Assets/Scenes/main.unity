@@ -3560,7 +3560,7 @@ MonoBehaviour:
   speedMultiplicator: 2
   minTimeJump: 5
   maxTimeJump: 8
-  jumpForce: 20
+  jumpForce: 10
   swimSound: {fileID: 8300000, guid: fabc98ebead44af42b282bd2e919ff79, type: 3}
   attackSound: {fileID: 8300000, guid: c59c2aab2dad17a42a9e6b8df65592c2, type: 3}
   slideSound: {fileID: 8300000, guid: 33d49d38d67548f45950693d47eaacd1, type: 3}
@@ -5638,6 +5638,7 @@ GameObject:
   - component: {fileID: 2135366949}
   - component: {fileID: 2135366950}
   - component: {fileID: 2135366951}
+  - component: {fileID: 2135366952}
   m_Layer: 0
   m_Name: IceBloc
   m_TagString: Untagged
@@ -5877,6 +5878,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2135366952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135366945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076ea592c4d650c4788dc1af5b01a21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTime: 4
+  maxTime: 6
+  shadowNarval: {fileID: 1165736942346520, guid: 244227a99d137c040ae652c20b7395d1,
+    type: 2}
+  hornNarval: {fileID: 1261691177196618, guid: 65b2083297e4bad46bfa12a176eb1167, type: 2}
 --- !u!1 &2144500332
 GameObject:
   m_ObjectHideFlags: 0

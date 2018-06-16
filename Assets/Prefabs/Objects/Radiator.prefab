@@ -176,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteOn: {fileID: 21300000, guid: cba6ae94941386749991ec167d2fc310, type: 3}
   spriteOff: {fileID: 21300000, guid: 218ec2ef80e936b4fbc3697dda75104a, type: 3}
+  additonalSprites: []
+  additonalStats: []
   type: 2
   clipOn: {fileID: 8300000, guid: e7b80e638a930cd4e9141843553332f9, type: 3}
   clipOff: {fileID: 8300000, guid: 5fefccb134b16f14b98d1f5c4364159b, type: 3}
@@ -213,7 +215,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 395789959
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 218ec2ef80e936b4fbc3697dda75104a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

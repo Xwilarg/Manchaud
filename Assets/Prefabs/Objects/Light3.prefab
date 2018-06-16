@@ -176,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteOn: {fileID: 21300000, guid: 7347ce86ede68d3478c80447c75077be, type: 3}
   spriteOff: {fileID: 21300000, guid: 1945cb1f806f46b4a8d9a5f8652b16c5, type: 3}
+  additonalSprites: []
+  additonalStats: []
   type: 1
   clipOn: {fileID: 8300000, guid: 865585800ba80d74392fa778c9959150, type: 3}
   clipOff: {fileID: 8300000, guid: c274950aab9d0934198addabf3b4a3ab, type: 3}
