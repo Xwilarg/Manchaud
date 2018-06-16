@@ -79,7 +79,8 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void Start () {
+    private void Start ()
+    {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -94,7 +95,8 @@ public class Character : MonoBehaviour
         audioSrc.PlayOneShot(walkingClips[Random.Range(0, 5)]);
     }
 
-    private void Update () {
+    private void Update ()
+    {
         if (Wait())
             Move();
     }
