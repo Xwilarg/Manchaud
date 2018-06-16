@@ -44,7 +44,7 @@ public class PenguinController : MonoBehaviour
         walkTimer -= Time.deltaTime;
         if (walkTimer < 0f && Mathf.Abs(hor) > float.Epsilon && Mathf.Abs(ver) > float.Epsilon)
         {
-            source.clip = movSounds[UnityEngine.Random.Range(0, movSounds.Length)];
+            source.clip = movSounds[Random.Range(0, movSounds.Length)];
             source.Play();
             walkTimer = source.clip.length + 0.2f;
         }
