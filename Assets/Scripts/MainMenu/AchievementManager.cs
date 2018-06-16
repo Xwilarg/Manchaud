@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class AchievementManager : MonoBehaviour {
-
+public class AchievementManager : MonoBehaviour
+{
     [SerializeField]
     private GameObject popup;
     [SerializeField]

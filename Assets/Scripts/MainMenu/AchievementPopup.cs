@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class AchievementPopup : MonoBehaviour {
-
+public class AchievementPopup : MonoBehaviour
+{
     [SerializeField]
     private Text title, description;
     private float timer;
