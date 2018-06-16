@@ -47,6 +47,9 @@ TagManager:
   - name: RoomBackground
     uniqueID: 1202495679
     locked: 0
+  - name: Ladder
+    uniqueID: 285880557
+    locked: 0
   - name: HouseBackground
     uniqueID: 1075093149
     locked: 0
