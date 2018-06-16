@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e6c86750f38864285e5952dec33626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stairs: 0
+  stairs: 1
   up: {fileID: 0}
   down: {fileID: 2144500335}
   left: {fileID: 0}
@@ -1789,7 +1789,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 13e78d3e95c7e694ca79d7063c7db929, type: 3}
   - {fileID: 8300000, guid: 82979bfc28e64c04ab8c7b78d4281951, type: 3}
   waitingTime: 2
-  takeStairsRate: 80
+  takeStairsRate: 50
 --- !u!50 &724072950
 Rigidbody2D:
   serializedVersion: 4
@@ -4801,7 +4801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e6c86750f38864285e5952dec33626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stairs: 0
+  stairs: 1
   up: {fileID: 458543702}
   down: {fileID: 0}
   left: {fileID: 0}
