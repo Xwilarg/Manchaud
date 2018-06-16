@@ -58,7 +58,7 @@ public class Character : MonoBehaviour
             if (Random.Range(1, 100) < switchOnRate)
             {
                 SwitchLight sl = device.GetComponent<SwitchLight>();
-                if (sl != null)
+                if (sl != null && sl.GetObject() != SwitchLight.Object.RADIATOR)
                     sl.SwitchOn();
             }
         }
