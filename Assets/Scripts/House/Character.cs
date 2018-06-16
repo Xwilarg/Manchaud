@@ -6,7 +6,6 @@
 public class Character : MonoBehaviour {
 
     private Rigidbody2D rb;
-    private bool stairs;
     [SerializeField]
     private Room room, oldRoom;
     [SerializeField]
@@ -26,7 +25,7 @@ public class Character : MonoBehaviour {
         {
             oldRoom = room;
             room = other.GetComponent<Room>();
-            if (tookStairs == false && room.HasStairs())
+            if (!tookStairs && room.HasStairs())
             {
                 if (room.GetDown() != null && room.GetDown() != oldRoom)
                     rb.MovePosition(room.GetDown().transform.position - firstFloorOffset);
@@ -38,7 +37,6 @@ public class Character : MonoBehaviour {
     }
 
     private void Start () {
-        stairs = room.HasStairs();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         direction = Directions.RIGHT;
@@ -46,7 +44,7 @@ public class Character : MonoBehaviour {
 	}
 	
 	private void Update () {
-            tookStairs = false;
+        tookStairs = false;
         if (direction != Directions.LEFT && room.GetLeft() != null)
         {
             direction = Directions.LEFT;
