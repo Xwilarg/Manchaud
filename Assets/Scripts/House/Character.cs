@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
     private enum Directions { LEFT, RIGHT }
     [SerializeField]
     private Vector3 firstFloorOffset, secondFloorOffset;
+    [Range(0, 100)]
     [SerializeField]
     private int switchOnRate;
     [SerializeField]
@@ -28,6 +29,9 @@ public class Character : MonoBehaviour
     private float timer;
     [SerializeField]
     private float waitingTime;
+    [Range(0, 100)]
+    [SerializeField]
+    private int takeStairsRate;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,16 +40,10 @@ public class Character : MonoBehaviour
             Stop();
             oldRoom = room;
             room = other.GetComponent<Room>();
+            timer = 0f;
 
             SwitchOnDevices();
-            if (!tookStairs && room.HasStairs())
-            {
-                if (room.GetDown() != null && room.GetDown() != oldRoom)
-                    rb.MovePosition(room.GetDown().transform.position - firstFloorOffset);
-                else if (room.GetUp() != null && room.GetUp() != oldRoom)
-                    rb.MovePosition(room.GetUp().transform.position - secondFloorOffset);
-            }
-            timer = 0f;
+            TakeStairs();
         }
     }
 
@@ -63,6 +61,21 @@ public class Character : MonoBehaviour
         }
     }
 
+    private void TakeStairs()
+    {
+        Debug.Log(Random.Range(0, 100));
+        if (Random.Range(0, 100) > takeStairsRate)
+            return;
+        if (!tookStairs && room.HasStairs())
+        {
+            if (room.GetDown() != null && room.GetDown() != oldRoom)
+                rb.MovePosition(room.GetDown().transform.position - firstFloorOffset);
+            else if (room.GetUp() != null && room.GetUp() != oldRoom)
+                rb.MovePosition(room.GetUp().transform.position - secondFloorOffset);
+            //tookStairs = true;
+        }
+    }
+
     private void Start () {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -75,14 +88,14 @@ public class Character : MonoBehaviour
 	private void Update () {
         if (step++ % 30 == 0)
             audioSrc.PlayOneShot(walkingClips[Random.Range(0, 5)], 0.3f);
-        Wait();
+        if (Wait())
+            Move();
     }
 
-    private void Wait()
+    private bool Wait()
     {
         timer += Time.deltaTime;
-        if (timer >= waitingTime)
-            Move();
+        return timer >= waitingTime;
     }
 
     private void Move()

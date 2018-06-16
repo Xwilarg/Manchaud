@@ -1789,6 +1789,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 13e78d3e95c7e694ca79d7063c7db929, type: 3}
   - {fileID: 8300000, guid: 82979bfc28e64c04ab8c7b78d4281951, type: 3}
   waitingTime: 2
+  takeStairsRate: 80
 --- !u!50 &724072950
 Rigidbody2D:
   serializedVersion: 4
