@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
             SwitchLight[] devices = room.GetComponentsInChildren<SwitchLight>();
             foreach (SwitchLight device in devices)
             {
-                devices.SwitchOn();
+                device.SwitchOn();
             }
             if (!tookStairs && room.HasStairs())
             {
