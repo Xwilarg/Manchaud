@@ -2882,6 +2882,7 @@ MonoBehaviour:
   firstNode: {fileID: 1049157187}
   speed: 75
   step: 1
+  speedMultiplicator: 2
   minTimeJump: 5
   maxTimeJump: 8
   jumpForce: 20

@@ -12,6 +12,8 @@ public class OrcController : MonoBehaviour
     private float speed;
     [SerializeField]
     private float step;
+    [SerializeField]
+    private float speedMultiplicator;
     [Header("Attack")]
     [SerializeField]
     private float minTimeJump;
@@ -41,6 +43,8 @@ public class OrcController : MonoBehaviour
 
     private List<Node> nodes;
 
+    private float currMutliplicator;
+
     private enum Action
     {
         swim,
@@ -69,6 +73,7 @@ public class OrcController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         source = GetComponent<AudioSource>();
         SetSound(Action.swim);
+        currMutliplicator = 1f;
     }
 
     private void SetSound(Action currAction)
@@ -119,7 +124,11 @@ public class OrcController : MonoBehaviour
 
     private void Update()
     {
-        attackTimer -= Time.deltaTime;
+        attackTimer -= Time.deltaTime * currMutliplicator;
+        if (Input.mousePosition.x < Screen.width / 2)
+            currMutliplicator = 1f;
+        else
+            currMutliplicator = speedMultiplicator;
         // Prepare attack
         if (attackTimer < 0f)
         {
@@ -136,13 +145,13 @@ public class OrcController : MonoBehaviour
             if (xDir == 0 && yDir == 0)
                 nextNode = nextNode.GetNextNode();
             else
-                rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
+                rb.velocity = new Vector2(xDir * speed * Time.deltaTime * currMutliplicator, yDir * speed * Time.deltaTime * currMutliplicator);
         }
         // Jump
         else if (killTimer == null)
         {
             rb.velocity = Vector2.zero;
-            jumpTimer -= Time.deltaTime;
+            jumpTimer -= Time.deltaTime * currMutliplicator;
             if (jumpTimer < 0f)
             {
                 rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
