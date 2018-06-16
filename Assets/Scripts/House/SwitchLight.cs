@@ -22,6 +22,7 @@ public class SwitchLight : MonoBehaviour
     private Object obj;
     private float secConso;
     private float currConso;
+    private Room room;
 
     public Object GetObject() { return (obj); }
     public bool IsOn() { return (isOn); }
@@ -39,6 +40,7 @@ public class SwitchLight : MonoBehaviour
     private void Start()
     {
         Debug.Assert(additonalStats.Length == additonalSprites.Length, "add sprites and add stats must be same length");
+        room = transform.parent.GetComponent<Room>();
         currSprite = GetComponent<SpriteRenderer>();
         isOn = (currSprite.sprite == spriteOn);
         audioSrc = GetComponent<AudioSource>();
@@ -84,6 +86,8 @@ public class SwitchLight : MonoBehaviour
     {
         if (state == "on")
         {
+            if (obj == Object.LIGHHIGH || obj == Object.LIGHTLOW)
+                room.AddLamp();
             int i = 0;
             foreach (Sprite s in additonalSprites)
             {
@@ -95,6 +99,8 @@ public class SwitchLight : MonoBehaviour
                 i++;
             }
         }
+        else if (obj == Object.LIGHHIGH || obj == Object.LIGHTLOW)
+            room.RemoveLamp();
         currSprite.sprite = state == "on" ? spriteOn : spriteOff;
     }
 
