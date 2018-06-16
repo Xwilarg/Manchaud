@@ -15,7 +15,6 @@ public class Character : MonoBehaviour
     private Sprite spriteLeft, spriteRight;
     private SpriteRenderer sr;
     private Directions direction;
-    private bool tookStairs;
     private enum Directions { LEFT, RIGHT }
     [SerializeField]
     private Vector3 firstFloorOffset, secondFloorOffset;
@@ -69,13 +68,12 @@ public class Character : MonoBehaviour
     {
         if (Random.Range(0, 100) > takeStairsRate)
             return;
-        if (!tookStairs && room.HasStairs())
+        if (room.HasStairs())
         {
             if (room.GetDown() != null && room.GetDown() != oldRoom)
                 rb.MovePosition(room.GetDown().transform.position - firstFloorOffset);
             else if (room.GetUp() != null && room.GetUp() != oldRoom)
                 rb.MovePosition(room.GetUp().transform.position - secondFloorOffset);
-            //tookStairs = true;
         }
     }
 

@@ -7,6 +7,7 @@ public class FallDetector : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<Rigidbody2D>().AddTorque(float.MaxValue);
+            collision.GetComponent<PenguinController>().SetAlive(false);
         }
     }
 }

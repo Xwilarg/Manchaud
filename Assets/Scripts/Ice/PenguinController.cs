@@ -11,6 +11,7 @@ public class PenguinController : MonoBehaviour
     private AudioClip[] movSounds;
     [SerializeField]
     private Rigidbody2D ice;
+    private bool isAlive;
 
     private AudioSource source;
     private float walkTimer;
@@ -20,6 +21,7 @@ public class PenguinController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
         walkTimer = -1f;
+        isAlive = true;
     }
 
     private void Update()
@@ -40,5 +42,15 @@ public class PenguinController : MonoBehaviour
     private void Slide()
     {
         rb.velocity += new Vector2(-ice.transform.rotation.z * 10, 0);
+    }
+
+    public void SetAlive(bool state)
+    {
+        isAlive = state;
+    }
+
+    public bool IsAlive()
+    {
+        return isAlive;
     }
 }
