@@ -4505,6 +4505,8 @@ GameObject:
   - component: {fileID: 2135366947}
   - component: {fileID: 2135366948}
   - component: {fileID: 2135366949}
+  - component: {fileID: 2135366950}
+  - component: {fileID: 2135366951}
   m_Layer: 0
   m_Name: IceBloc
   m_TagString: Untagged
@@ -4712,6 +4714,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617ac1415b9660440a8d18ac4fb1f486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2135366950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135366945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160d1cc65fd4b434fa4fb2f9ff872a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 2.14
+--- !u!50 &2135366951
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135366945}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2144500332
 GameObject:
   m_ObjectHideFlags: 0

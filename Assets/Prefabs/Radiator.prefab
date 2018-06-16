@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5bfa2e90b1bc439b394714e74a8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteOn: {fileID: 21300000, guid: 218ec2ef80e936b4fbc3697dda75104a, type: 3}
-  spriteOff: {fileID: 21300000, guid: cba6ae94941386749991ec167d2fc310, type: 3}
+  spriteOn: {fileID: 21300000, guid: cba6ae94941386749991ec167d2fc310, type: 3}
+  spriteOff: {fileID: 21300000, guid: 218ec2ef80e936b4fbc3697dda75104a, type: 3}
   type: 2
   clipOn: {fileID: 8300000, guid: e7b80e638a930cd4e9141843553332f9, type: 3}
   clipOff: {fileID: 8300000, guid: 5fefccb134b16f14b98d1f5c4364159b, type: 3}
