@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(AudioSource))]
 public class OrcController : MonoBehaviour
 {
     [Header("Movements")]
@@ -19,7 +19,15 @@ public class OrcController : MonoBehaviour
     private float maxTimeJump;
     [SerializeField]
     private float jumpForce;
+    [Header("Sounds")]
+    [SerializeField]
+    private AudioClip swimSound;
+    [SerializeField]
+    private AudioClip attackSound;
+    [SerializeField]
+    private AudioClip slideSound;
 
+    private AudioSource source;
     private float attackTimer;
     private float? jumpTimer;
     private float? killTimer;
@@ -32,6 +40,13 @@ public class OrcController : MonoBehaviour
     private Rigidbody2D rb;
 
     private List<Node> nodes;
+
+    private enum Action
+    {
+        swim,
+        attack,
+        slide
+    }
 
     private void SetAttackTimer()
     {
@@ -52,6 +67,30 @@ public class OrcController : MonoBehaviour
         jumpTimer = null;
         killTimer = null;
         player = GameObject.FindGameObjectWithTag("Player");
+        source = GetComponent<AudioSource>();
+        SetSound(Action.swim);
+    }
+
+    private void SetSound(Action currAction)
+    {
+        switch (currAction)
+        {
+            case Action.attack:
+                source.clip = attackSound;
+                source.loop = false;
+                break;
+
+            case Action.slide:
+                source.clip = slideSound;
+                source.loop = false;
+                break;
+
+            case Action.swim:
+                source.clip = swimSound;
+                source.loop = true;
+                break;
+        }
+        source.Play();
     }
 
     private int GetXDirection()
@@ -81,12 +120,15 @@ public class OrcController : MonoBehaviour
     private void Update()
     {
         attackTimer -= Time.deltaTime;
+        // Prepare attack
         if (attackTimer < 0f)
         {
             SetAttackTimer();
             jumpTimer = 2f;
             jumpDir = (transform.position - player.transform.position).normalized;
+            SetSound(Action.attack);
         }
+        // Swim
         if (jumpTimer == null)
         {
             float xDir = GetXDirection();
@@ -96,6 +138,7 @@ public class OrcController : MonoBehaviour
             else
                 rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
         }
+        // Jump
         else if (killTimer == null)
         {
             rb.velocity = Vector2.zero;
@@ -104,8 +147,10 @@ public class OrcController : MonoBehaviour
             {
                 rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
                 killTimer = jumpTime;
+                SetSound(Action.slide);
             }
         }
+        // Go back to swim
         else
         {
             killTimer -= Time.deltaTime;
@@ -123,6 +168,7 @@ public class OrcController : MonoBehaviour
                         nextNode = n;
                     }
                 }
+                SetSound(Action.swim);
             }
         }
     }
