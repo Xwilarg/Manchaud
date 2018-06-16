@@ -34,7 +34,6 @@ public class OrcController : MonoBehaviour
     private float? jumpTimer;
     private float? killTimer;
     private Vector2 jumpDir;
-    private Vector2 lastMousePos;
 
     private const float jumpTime = 1.0f;
 
@@ -43,8 +42,6 @@ public class OrcController : MonoBehaviour
     private Rigidbody2D rb;
 
     private List<Node> nodes;
-
-    private float currMutliplicator;
 
     private enum Action
     {
@@ -74,8 +71,6 @@ public class OrcController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         source = GetComponent<AudioSource>();
         SetSound(Action.swim);
-        currMutliplicator = 1f;
-        lastMousePos = Input.mousePosition;
     }
 
     private void SetSound(Action currAction)
@@ -133,13 +128,13 @@ public class OrcController : MonoBehaviour
         if (xDir == 0 && yDir == 0)
             nextNode = nextNode.GetNextNode();
         else
-            rb.velocity = new Vector2(xDir * speed * Time.deltaTime * currMutliplicator, yDir * speed * Time.deltaTime * currMutliplicator);
+            rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
     }
 
     private void Jump()
     {
         rb.velocity = Vector2.zero;
-        jumpTimer -= Time.deltaTime * currMutliplicator;
+        jumpTimer -= Time.deltaTime;
         if (jumpTimer < 0f)
         {
             rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
@@ -171,14 +166,7 @@ public class OrcController : MonoBehaviour
 
     private void Update()
     {
-        attackTimer -= Time.deltaTime * currMutliplicator;
-        if (lastMousePos.x == Input.mousePosition.x && lastMousePos.y == Input.mousePosition.y)
-            currMutliplicator = 1f;
-        else
-        {
-            currMutliplicator = speedMultiplicator;
-            lastMousePos = Input.mousePosition;
-        }
+        attackTimer -= Time.deltaTime;
         if (attackTimer < 0f)
             PrepareAttack();
         if (jumpTimer == null)

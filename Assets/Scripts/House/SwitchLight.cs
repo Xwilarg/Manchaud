@@ -42,23 +42,24 @@ public class SwitchLight : MonoBehaviour
         currSprite = GetComponent<SpriteRenderer>();
         isOn = (currSprite.sprite == spriteOn);
         audioSrc = GetComponent<AudioSource>();
+        const float multiplicator = 2f;
         switch (obj)
         {
             case Object.COMPUTER:
-                secConso = 0.05f;
+                secConso = 0.05f * multiplicator;
                 break;
 
             case Object.FRIDGE:
-                secConso = 0.112f;
+                secConso = 0.112f * multiplicator;
                 break;
 
             case Object.LIGHHIGH:
             case Object.RADIATOR:
-                secConso = 0.076f;
+                secConso = 0.076f * multiplicator;
                 break;
 
             case Object.LIGHTLOW:
-                secConso = 0.025f;
+                secConso = 0.025f * multiplicator;
                 break;
 
             default:
