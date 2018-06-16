@@ -153,7 +153,6 @@ public class OrcController : MonoBehaviour
         sr.sprite = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
         Destroy(GetComponent<PolygonCollider2D>());
         gameObject.AddComponent<PolygonCollider2D>();
-        gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
         SetSound(Action.attack);
     }
 
@@ -168,7 +167,6 @@ public class OrcController : MonoBehaviour
             sr.sprite = allSprites[new Vector2Int(xDir, yDir)];
             Destroy(GetComponent<PolygonCollider2D>());
             gameObject.AddComponent<PolygonCollider2D>();
-            gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
             rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
         }
     }
