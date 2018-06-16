@@ -34,6 +34,7 @@ public class SpecialCardBoard : MonoBehaviour {
 
     public void Break()
     {
+        hits++;
         spriteRenderer.sprite = breakSprite;
         audioSource.PlayOneShot(breakClip);
         Debug.Log("It's not a cardboard");
