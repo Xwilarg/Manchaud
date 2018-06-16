@@ -27,9 +27,13 @@ public class Score : MonoBehaviour
     {
         if (penguin.IsAlive())
             score += (float)scoreStep * Time.deltaTime;
-        if ((int)score > save.bestScore)
-            save.bestScore = (int)score;
-        text.text = "Score: " + (int)score + "\nBest score: " + save.bestScore;
+        text.text = "Score: " + (int)score;
+        if (save != null)
+        {
+            if ((int)score > save.bestScore)
+                save.bestScore = (int)score;
+            text.text += "\nBest score: " + save.bestScore;
+        }
     }
 
     public IEnumerator Upload()
