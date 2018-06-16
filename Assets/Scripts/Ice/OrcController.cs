@@ -72,6 +72,12 @@ public class OrcController : MonoBehaviour
         return (-1);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            collision.GetComponent<Rigidbody2D>().AddTorque(float.MaxValue);
+    }
+
     private void Update()
     {
         attackTimer -= Time.deltaTime;
