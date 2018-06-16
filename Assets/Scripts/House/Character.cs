@@ -88,6 +88,11 @@ public class Character : MonoBehaviour
         step = 0;
         timer = 1f;
 	}
+
+    public void Footsteps()
+    {
+
+    }
 	
 	private void Update () {
         if (step++ % 30 == 0)
@@ -121,5 +126,6 @@ public class Character : MonoBehaviour
     private void Stop()
     {
         rb.velocity = new Vector2(0, 0);
+        animator.runtimeAnimatorController = null;
     }
 }
