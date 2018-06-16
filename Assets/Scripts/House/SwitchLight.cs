@@ -6,6 +6,10 @@ public class SwitchLight : MonoBehaviour
 {
     [SerializeField]
     private Sprite spriteOn, spriteOff;
+    [SerializeField]
+    private Sprite[] additonalSprites;
+    [SerializeField]
+    private float[] additonalStats;
     private bool isOn;
     private SpriteRenderer currSprite;
     [SerializeField]
@@ -31,6 +35,7 @@ public class SwitchLight : MonoBehaviour
 
     private void Start()
     {
+        Debug.Assert(additonalStats.Length == additonalSprites.Length, "add sprites and add stats must be same length");
         currSprite = GetComponent<SpriteRenderer>();
         isOn = (currSprite.sprite == spriteOn);
         audioSrc = GetComponent<AudioSource>();
@@ -71,10 +76,28 @@ public class SwitchLight : MonoBehaviour
         currConso += Time.deltaTime * secConso;
     }
 
+    private void SetSprite()
+    {
+        if (isOn)
+        {
+            int i = 0;
+            foreach (Sprite s in additonalSprites)
+            {
+                if (Random.Range(0, 100) < additonalStats[i])
+                {
+                    currSprite.sprite = s;
+                    return;
+                }
+                i++;
+            }
+        }
+        currSprite.sprite = (isOn) ? (spriteOn) : (spriteOff);
+    }
+
     private void OnMouseDown()
     {
         isOn = !isOn;
-        currSprite.sprite = (isOn) ? (spriteOn) : (spriteOff);
+        SetSprite();
         audioSrc.PlayOneShot(isOn ? clipOn : clipOff);
     }
 
@@ -82,8 +105,8 @@ public class SwitchLight : MonoBehaviour
     {
         if (!isOn)
         {
-            currSprite.sprite = spriteOn;
             isOn = true;
+            SetSprite();
             audioSrc.PlayOneShot(clipOn);
         }
     }

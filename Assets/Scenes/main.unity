@@ -2672,6 +2672,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: additonalStats.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: additonalSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4290274352610158, guid: 753dc5f3990f0674bab948e70321563d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.540506
@@ -2714,6 +2724,40 @@ Prefab:
       propertyPath: m_SortingLayer
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: additonalSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 03cc692b2f388f6428909d8671631cb7,
+        type: 3}
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: additonalSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b92702f83e529749a5ebb175d3b5ef7,
+        type: 3}
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: additonalStats.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: additonalStats.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: spriteOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a53de99fde07514b99d8155eab6cb4b,
+        type: 3}
+    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
+        type: 2}
+      propertyPath: spriteOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 0200fa0c1172a7f479e4fe728feabd39,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 753dc5f3990f0674bab948e70321563d, type: 2}
   m_IsPrefabParent: 0
