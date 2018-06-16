@@ -33,7 +33,7 @@ public class WattManager : MonoBehaviour
         if (cursorWatt < -240f) cursorWatt = -240f;
         cursor.localPosition = new Vector2(0f, cursorWatt);
         float volume = (cursorWatt + 250f) / 500f;
-        if (watt < 90)
+        if (watt < 0)
             watt = 0;
         watt = watt * 0.1f / 250f * Time.deltaTime;
         if (ice.localScale.x - watt > 0.1f)

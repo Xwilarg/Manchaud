@@ -34,7 +34,6 @@ public class MusicManager : MonoBehaviour
     
     public void SetVolume(Size size, float volume, bool change = false)
     {
-        Debug.Log(SourceAlternance);
         if (change)
         {
             // Set cold size
@@ -54,9 +53,9 @@ public class MusicManager : MonoBehaviour
                 CrossFade(0.5f, sources[SourceAlternance + 2], sources[(SourceAlternance + 3) % 4], lowHot);
         }
         // Intensity gauge is  = 1- volume
-        sources[0].volume = 1f - volume;
+        sources[SourceAlternance].volume = 1f - volume;
         // Gauge intensity is = volume
-        sources[1].volume = volume;
+        sources[SourceAlternance + 2].volume = volume;
     }
 
     private void CrossFade(float duration, AudioSource audioOut, AudioSource audioIn, AudioClip audioFileIn)
