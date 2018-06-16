@@ -4736,8 +4736,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c1071e8b62ad9194eb1e89fa44d3d3bb, type: 3}
   ice: {fileID: 2135366951}
   gameOverPanel: {fileID: 319209647}
-  controllerLeft: {fileID: 9100000, guid: 56dc606c3fac12f4e98da5088ae13f02, type: 2}
   controllerRight: {fileID: 9100000, guid: 96383ba28a4bedb499530e659223644c, type: 2}
+  controllerBotRight: {fileID: 9100000, guid: 028ff012a8f5db04586a547b26b53c84, type: 2}
+  controllerBot: {fileID: 9100000, guid: 299afbd8fa16ddf4783742e399e66784, type: 2}
+  controllerBotLeft: {fileID: 9100000, guid: c4feedbb48a534143a6ab9a032dbabb2, type: 2}
+  controllerLeft: {fileID: 9100000, guid: 56dc606c3fac12f4e98da5088ae13f02, type: 2}
+  controllerTopLeft: {fileID: 9100000, guid: a63a06066926b7541849406df373c040, type: 2}
+  controllerTop: {fileID: 9100000, guid: 21de0a8f5baef7043a59457be1555910, type: 2}
+  controllerTopRight: {fileID: 9100000, guid: fc7d35ab8bd2b42489a1db2cf6fb11e9, type: 2}
 --- !u!61 &1436816104
 BoxCollider2D:
   m_ObjectHideFlags: 0
