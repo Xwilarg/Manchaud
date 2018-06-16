@@ -13,21 +13,21 @@ public class SpecialCardBoard : MonoBehaviour {
     [SerializeField]
     private AudioClip breakClip;
     private AudioSource audioSource;
-
-	// Use this for initialization
-	void Start () {
+    AchievementManager am;
+    
+	private void Start () {
         hits = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        am = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<AchievementManager>();
 	}
 
-    public void OnMouseDown()
+    private void OnMouseDown()
     {
         ++hits;
     }
-
-    // Update is called once per frame
-    public void Update () {
+    
+    private void Update () {
         if (hits == breakLimit)
             Break();
 	}
@@ -37,5 +37,9 @@ public class SpecialCardBoard : MonoBehaviour {
         hits++;
         spriteRenderer.sprite = breakSprite;
         audioSource.PlayOneShot(breakClip);
+<<<<<<< HEAD
+=======
+        am.Create("It's not a cardboard!", "Look like I broke grand mother's porcelain.");
+>>>>>>> 3b92431cbfc99fac4177e84a85612214f89729cd
     }
 }

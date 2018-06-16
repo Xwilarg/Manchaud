@@ -7,7 +7,11 @@ TagManager:
   - Room
   - Node
   - VFX
+<<<<<<< HEAD
   - Permanent
+=======
+  - ScoreManager
+>>>>>>> 3b92431cbfc99fac4177e84a85612214f89729cd
   layers:
   - Default
   - TransparentFX
