@@ -3,6 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class OrcController : MonoBehaviour
 {
     [Header("Movements")]
@@ -28,6 +29,26 @@ public class OrcController : MonoBehaviour
     private AudioClip attackSound;
     [SerializeField]
     private AudioClip slideSound;
+    [Header("Sprites")]
+    [SerializeField]
+    private Sprite spriteS;
+    [SerializeField]
+    private Sprite spriteN;
+    [SerializeField]
+    private Sprite spriteW;
+    [SerializeField]
+    private Sprite spriteE;
+    [SerializeField]
+    private Sprite spriteNE;
+    [SerializeField]
+    private Sprite spriteSE;
+    [SerializeField]
+    private Sprite spriteNW;
+    [SerializeField]
+    private Sprite spriteSW;
+
+    private Dictionary<Vector2Int, Sprite> allSprites;
+    private SpriteRenderer sr;
 
     private AudioSource source;
     private float attackTimer;
@@ -58,6 +79,17 @@ public class OrcController : MonoBehaviour
     private void Start()
     {
         Debug.Assert(minTimeJump < maxTimeJump, "min time must be < to max time");
+        allSprites = new Dictionary<Vector2Int, Sprite>()
+        {
+            { new Vector2Int(0, -1), spriteS },
+            { new Vector2Int(0, 1), spriteN },
+            { new Vector2Int(1, 0), spriteE },
+            { new Vector2Int(-1, 0), spriteW },
+            { new Vector2Int(1, -1), spriteSE },
+            { new Vector2Int(-1, -1), spriteSW },
+            { new Vector2Int(1, 1), spriteNE },
+            { new Vector2Int(-1, 1), spriteNW },
+        };
         nodes = new List<Node>();
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Node"))
         {
@@ -71,6 +103,7 @@ public class OrcController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         source = GetComponent<AudioSource>();
         SetSound(Action.swim);
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void SetSound(Action currAction)
@@ -95,20 +128,20 @@ public class OrcController : MonoBehaviour
         source.Play();
     }
 
-    private int GetXDirection()
+    private int GetXDirection(Vector2 dest)
     {
-        if (Mathf.Abs(transform.position.x - nextNode.transform.position.x) < step)
+        if (Mathf.Abs(transform.position.x - dest.x) < step)
             return (0);
-        if (transform.position.x < nextNode.transform.position.x)
+        if (transform.position.x < dest.x)
             return (1);
         return (-1);
     }
 
-    private int GetYDirection()
+    private int GetYDirection(Vector2 dest)
     {
-        if (Mathf.Abs(transform.position.y - nextNode.transform.position.y) < step)
+        if (Mathf.Abs(transform.position.y - dest.y) < step)
             return (0);
-        if (transform.position.y < nextNode.transform.position.y)
+        if (transform.position.y < dest.y)
             return (1);
         return (-1);
     }
@@ -118,17 +151,21 @@ public class OrcController : MonoBehaviour
         SetAttackTimer();
         jumpTimer = 2f;
         jumpDir = (transform.position - player.transform.position).normalized;
+        sr.sprite = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
         SetSound(Action.attack);
     }
 
     private void Swim()
     {
-        float xDir = GetXDirection();
-        float yDir = GetYDirection();
+        int xDir = GetXDirection(nextNode.transform.position);
+        int yDir = GetYDirection(nextNode.transform.position);
         if (xDir == 0 && yDir == 0)
             nextNode = nextNode.GetNextNode();
         else
+        {
+            sr.sprite = allSprites[new Vector2Int(xDir, yDir)];
             rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
+        }
     }
 
     private void Jump()

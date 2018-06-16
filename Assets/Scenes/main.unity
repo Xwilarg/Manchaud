@@ -4090,6 +4090,14 @@ MonoBehaviour:
   swimSound: {fileID: 8300000, guid: fabc98ebead44af42b282bd2e919ff79, type: 3}
   attackSound: {fileID: 8300000, guid: c59c2aab2dad17a42a9e6b8df65592c2, type: 3}
   slideSound: {fileID: 8300000, guid: 33d49d38d67548f45950693d47eaacd1, type: 3}
+  spriteS: {fileID: 21300000, guid: d16c46121122e4248b0668dc0b79f5f8, type: 3}
+  spriteN: {fileID: 21300000, guid: ce8baa616da713648a7503c594fe6964, type: 3}
+  spriteW: {fileID: 21300000, guid: cd5a8eb43d65cf541b3ec1fa979eefe5, type: 3}
+  spriteE: {fileID: 21300000, guid: 806b5dab52ed3e940a02dfcfc84f8be5, type: 3}
+  spriteNE: {fileID: 21300000, guid: da06c92472f0a944da1bde5e8ae26339, type: 3}
+  spriteSE: {fileID: 21300000, guid: d16c46121122e4248b0668dc0b79f5f8, type: 3}
+  spriteNW: {fileID: 21300000, guid: ce8baa616da713648a7503c594fe6964, type: 3}
+  spriteSW: {fileID: 21300000, guid: f102a874f6820394da4a830081d58119, type: 3}
 --- !u!82 &1235840753
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4450,16 +4458,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 362260980}
     m_Modifications:
-    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: additonalStats.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: additonalSprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4290274352610158, guid: 753dc5f3990f0674bab948e70321563d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.07915616
@@ -4492,38 +4490,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 212704832035397484, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1206166025
-      objectReference: {fileID: 0}
-    - target: {fileID: 212704832035397484, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: additonalStats.Array.data[0]
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: additonalStats.Array.data[1]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: additonalSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 03cc692b2f388f6428909d8671631cb7,
-        type: 3}
-    - target: {fileID: 114374234299281012, guid: 753dc5f3990f0674bab948e70321563d,
-        type: 2}
-      propertyPath: additonalSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2b92702f83e529749a5ebb175d3b5ef7,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 753dc5f3990f0674bab948e70321563d, type: 2}
   m_IsPrefabParent: 0
