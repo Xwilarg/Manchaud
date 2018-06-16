@@ -26,6 +26,7 @@ public class SwitchLight : MonoBehaviour
     {
         isOn = !isOn;
         currSprite.sprite = (isOn) ? (spriteOn) : (spriteOff);
+        audioSrc.PlayOneShot(isOn ? clipOn : clipOff);
     }
 
     public void SwitchOn()
