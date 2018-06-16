@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Room
-  - Node
-  - VFX
-<<<<<<< HEAD
-  - Permanent
-=======
-  - ScoreManager
->>>>>>> 3b92431cbfc99fac4177e84a85612214f89729cd
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -46,36 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: MainBackground
-    uniqueID: 274841687
-    locked: 0
-  - name: RoomBackground
-    uniqueID: 1202495679
-    locked: 0
-  - name: Ladder
-    uniqueID: 285880557
-    locked: 0
-  - name: HouseBackground
-    uniqueID: 1075093149
-    locked: 0
-  - name: HouseMaterialBackground
-    uniqueID: 395789959
-    locked: 0
-  - name: HouseMaterialStatic
-    uniqueID: 3088801271
-    locked: 0
-  - name: HouseMaterial
-    uniqueID: 2910264447
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BlackFilter
-    uniqueID: 2855926339
-    locked: 0
-  - name: Foundations
-    uniqueID: 4146539367
-    locked: 0
-  - name: Foreground
-    uniqueID: 921524701
     locked: 0

@@ -37,9 +37,6 @@ public class SpecialCardBoard : MonoBehaviour {
         hits++;
         spriteRenderer.sprite = breakSprite;
         audioSource.PlayOneShot(breakClip);
-<<<<<<< HEAD
-=======
         am.Create("It's not a cardboard!", "Look like I broke grand mother's porcelain.");
->>>>>>> 3b92431cbfc99fac4177e84a85612214f89729cd
     }
 }
