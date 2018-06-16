@@ -91,7 +91,7 @@ public class Character : MonoBehaviour
 
     public void Footsteps()
     {
-        audioSrc.PlayOneShot(walkingClips[Random.Range(0, 5)], 0.3f);
+        audioSrc.PlayOneShot(walkingClips[Random.Range(0, 5)]);
     }
 
     private void Update () {
