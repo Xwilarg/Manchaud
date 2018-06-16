@@ -3,7 +3,6 @@ using UnityEngine.Networking;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-
 public class Score : MonoBehaviour
 {
     [SerializeField]
@@ -28,8 +27,6 @@ public class Score : MonoBehaviour
         {
             if (!uploadStart)
                 StartCoroutine(Upload());
-            if (uploadDone)
-                SceneManager.LoadScene("MainMenu");
         }
     }
 
