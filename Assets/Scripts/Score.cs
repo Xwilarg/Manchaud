@@ -1,28 +1,32 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
-using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class Score : MonoBehaviour
 {
     [SerializeField]
     private int scoreStep;
     private int score;
-    private GameObject penguin;
+    private PenguinController penguin;
+    private bool uploadDone;
 
     public void Start()
     {
         score = 0;
-        penguin = GameObject.FindGameObjectWithTag("Player");
+        penguin = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
+        uploadDone = false;
     }
 
     public void Update()
     {
         score += scoreStep * (int)Time.deltaTime;
-        if (!penguin.GetComponent<PenguinController>().IsAlive())
+        if (!penguin.IsAlive())
         {
             StartCoroutine(Upload());
-            Application.Quit();
+            if (uploadDone)
+                SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -44,5 +48,6 @@ public class Score : MonoBehaviour
         {
             Debug.Log("Form upload complete!");
         }
+        uploadDone = true;
     }
 }
