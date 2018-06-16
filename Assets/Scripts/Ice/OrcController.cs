@@ -49,7 +49,7 @@ public class OrcController : MonoBehaviour
 
     private Dictionary<Vector2Int, Sprite> allSprites;
     private SpriteRenderer sr;
-
+    private PolygonCollider2D coll;
     private AudioSource source;
     private float attackTimer;
     private float? jumpTimer;
@@ -152,6 +152,8 @@ public class OrcController : MonoBehaviour
         jumpTimer = 2f;
         jumpDir = (transform.position - player.transform.position).normalized;
         sr.sprite = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
+        Destroy(GetComponent<PolygonCollider2D>());
+        gameObject.AddComponent<PolygonCollider2D>();
         SetSound(Action.attack);
     }
 
@@ -164,6 +166,8 @@ public class OrcController : MonoBehaviour
         else
         {
             sr.sprite = allSprites[new Vector2Int(xDir, yDir)];
+            Destroy(GetComponent<PolygonCollider2D>());
+            gameObject.AddComponent<PolygonCollider2D>();
             rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
         }
     }
