@@ -7,6 +7,7 @@ TagManager:
   - Room
   - Node
   - VFX
+  - Permanent
   layers:
   - Default
   - TransparentFX

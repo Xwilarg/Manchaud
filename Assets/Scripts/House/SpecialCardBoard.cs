@@ -37,6 +37,5 @@ public class SpecialCardBoard : MonoBehaviour {
         hits++;
         spriteRenderer.sprite = breakSprite;
         audioSource.PlayOneShot(breakClip);
-        GetComponent<Text>().enabled = true;
     }
 }

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Text))]
 public class Score : MonoBehaviour
 {
     [SerializeField]
@@ -11,17 +12,24 @@ public class Score : MonoBehaviour
     private PenguinController penguin;
     private bool uploadDone;
     private bool uploadStart;
+    private Text text;
+    private Save save;
 
-    public void Start()
+    private void Start()
     {
         score = 0;
         penguin = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
+        text = GetComponent<Text>();
+        save = GameObject.FindObjectOfType<Save>();
     }
 
-    public void Update()
+    private void Update()
     {
         if (penguin.IsAlive())
             score += (float)scoreStep * Time.deltaTime;
+        if ((int)score > save.bestScore)
+            save.bestScore = (int)score;
+        text.text = "Score: " + (int)score + "\nBest score: " + save.bestScore;
     }
 
     public IEnumerator Upload()
