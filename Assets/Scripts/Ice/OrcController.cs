@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class OrcController : MonoBehaviour {
@@ -29,6 +31,8 @@ public class OrcController : MonoBehaviour {
     private Node nextNode;
     private Rigidbody2D rb;
 
+    private List<Node> nodes;
+
     private void SetAttackTimer()
     {
         attackTimer = Random.Range(minTimeJump, maxTimeJump);
@@ -37,6 +41,11 @@ public class OrcController : MonoBehaviour {
     private void Start()
     {
         Debug.Assert(minTimeJump < maxTimeJump, "min time must be < to max time");
+        nodes = new List<Node>();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Node"))
+        {
+            nodes.Add(go.GetComponent<Node>());
+        }
         nextNode = firstNode.GetNextNode();
         rb = GetComponent<Rigidbody2D>();
         SetAttackTimer();
@@ -98,6 +107,16 @@ public class OrcController : MonoBehaviour {
             {
                 killTimer = null;
                 jumpTimer = null;
+                float? minDistance = null;
+                foreach (Node n in nodes)
+                {
+                    float currDistance = Vector2.Distance(transform.position, n.transform.position);
+                    if (minDistance == null || currDistance < minDistance)
+                    {
+                        minDistance = currDistance;
+                        nextNode = n;
+                    }
+                }
             }
         }
     }
