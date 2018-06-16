@@ -15,7 +15,6 @@ public class RotateIce : MonoBehaviour {
 
     public void Update()
     {
-        Debug.Log(timer);
         timer += Time.deltaTime;
         if (rb != null)
         {

@@ -3453,6 +3453,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 03b3f409109b66441825474a10fe93d3, type: 3}
   - {fileID: 8300000, guid: d0d387af9626344428d6159f99d9a883, type: 3}
   - {fileID: 8300000, guid: c1071e8b62ad9194eb1e89fa44d3d3bb, type: 3}
+  ice: {fileID: 2135366951}
 --- !u!61 &1436816104
 BoxCollider2D:
   m_ObjectHideFlags: 0
