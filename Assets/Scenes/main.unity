@@ -215,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 65492829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.010633349, y: -0.055000067, z: 0}
+  m_LocalPosition: {x: 0.038, y: -0.055000067, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2144500334}
@@ -3601,7 +3601,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961527949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.017, y: -0.024999857, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.024999857, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1533476005}
@@ -5695,7 +5695,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1611303863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03393483, y: 0.065, z: 0}
+  m_LocalPosition: {x: -0.004, y: 0.065, z: 0}
   m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_Children: []
   m_Father: {fileID: 362260980}
@@ -6919,9 +6919,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e6c86750f38864285e5952dec33626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stairs: 0
+  stairs: 1
   up: {fileID: 0}
-  down: {fileID: 0}
+  down: {fileID: 458543702}
   left: {fileID: 0}
   right: {fileID: 0}
   radiator: {fileID: 0}
