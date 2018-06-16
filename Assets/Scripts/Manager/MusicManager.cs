@@ -51,6 +51,9 @@ public class MusicManager : MonoBehaviour
                 CrossFade(0.5f, sources[SourceAlternance + 2], sources[(SourceAlternance + 3) % 4], mediumHot);
             else
                 CrossFade(0.5f, sources[SourceAlternance + 2], sources[(SourceAlternance + 3) % 4], lowHot);
+
+            // Update counter
+            SourceAlternance = (SourceAlternance + 1) % 2;
         }
         // Intensity gauge is  = 1- volume
         sources[SourceAlternance].volume = 1f - volume;
@@ -63,8 +66,6 @@ public class MusicManager : MonoBehaviour
         FadeOut(duration, audioOut);
         audioIn.clip = audioFileIn;
         FadeIn(duration, audioIn);
-        // Update counter
-        SourceAlternance = (SourceAlternance + 1) % 2;
     }
 
     private void FadeOut(float duration, AudioSource audioOut)
