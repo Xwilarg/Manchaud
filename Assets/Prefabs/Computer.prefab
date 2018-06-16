@@ -78,9 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5bfa2e90b1bc439b394714e74a8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteOn: {fileID: 21300000, guid: 4a53de99fde07514b99d8155eab6cb4b, type: 3}
-  spriteOff: {fileID: 21300000, guid: 0200fa0c1172a7f479e4fe728feabd39, type: 3}
-  type: 1
+  spriteOn: {fileID: 21300000, guid: 0200fa0c1172a7f479e4fe728feabd39, type: 3}
+  spriteOff: {fileID: 21300000, guid: 4a53de99fde07514b99d8155eab6cb4b, type: 3}
+  additonalSprites: []
+  additonalStats: []
+  type: 4
   clipOn: {fileID: 0}
   clipOff: {fileID: 0}
   obj: 4

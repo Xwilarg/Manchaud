@@ -14,7 +14,7 @@ public class SwitchLight : MonoBehaviour
     private SpriteRenderer currSprite;
     [SerializeField]
     private Type type;
-    enum Type { FRIDGE, LIGHT, RADIATOR }
+    enum Type { FRIDGE, LIGHT, RADIATOR, DOOR, COMPUTER }
     private AudioSource audioSrc;
     [SerializeField]
     private AudioClip clipOn, clipOff;
@@ -76,9 +76,9 @@ public class SwitchLight : MonoBehaviour
         currConso += Time.deltaTime * secConso;
     }
 
-    private void SetSprite()
+    private void SetSprite(string state)
     {
-        if (isOn)
+        if (state == "on")
         {
             int i = 0;
             foreach (Sprite s in additonalSprites)
@@ -91,14 +91,15 @@ public class SwitchLight : MonoBehaviour
                 i++;
             }
         }
-        currSprite.sprite = (isOn) ? (spriteOn) : (spriteOff);
+        currSprite.sprite = state == "on" ? spriteOn : spriteOff;
     }
 
     private void OnMouseDown()
     {
-        isOn = !isOn;
-        SetSprite();
-        audioSrc.PlayOneShot(isOn ? clipOn : clipOff);
+        if (isOn)
+            SwitchOff();
+        else
+            SwitchOn();
     }
 
     public void SwitchOn()
@@ -106,8 +107,23 @@ public class SwitchLight : MonoBehaviour
         if (!isOn)
         {
             isOn = true;
-            SetSprite();
+            SetSprite("on");
             audioSrc.PlayOneShot(clipOn);
         }
+    }
+
+    public void SwitchOff()
+    {
+        if (isOn)
+        {
+            isOn = false;
+            SetSprite("off");
+            audioSrc.PlayOneShot(clipOff);
+        }
+    }
+
+    public bool IsDoor()
+    {
+        return type == Type.DOOR;
     }
 }
