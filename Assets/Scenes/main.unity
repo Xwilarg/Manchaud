@@ -6618,12 +6618,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb85d730f8544240a7d3e8c1f509d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lowCold: {fileID: 8300000, guid: 59844a15b12af0548a8d75de7583d64a, type: 3}
-  mediumCold: {fileID: 8300000, guid: c1cb9031a0b3e2c4995361392402207a, type: 3}
-  highCold: {fileID: 8300000, guid: 6ede37b4a3b98d64ea821fe1c35c1b5f, type: 3}
-  lowHot: {fileID: 8300000, guid: 8d50f5f7f1e3e1146a9e3dfb8438d330, type: 3}
-  mediumHot: {fileID: 8300000, guid: 819168876c4836c4fb95bbdd10754aae, type: 3}
-  highHot: {fileID: 8300000, guid: daffac941204fae47a53fb49bbc3e810, type: 3}
+  lowCold: {fileID: 8300000, guid: 52dd9ef0a19c6424b9a86dbe3fc12e65, type: 3}
+  mediumCold: {fileID: 8300000, guid: fa7d51098c62737458cbcc31161cacf9, type: 3}
+  highCold: {fileID: 8300000, guid: edf57c414c409ac4c9638cd725879b45, type: 3}
+  lowHot: {fileID: 8300000, guid: 938d8dc411bb79a4887224c941e98d49, type: 3}
+  mediumHot: {fileID: 8300000, guid: 2d50da402a7c8d146abb2d7ee0f802a6, type: 3}
+  highHot: {fileID: 8300000, guid: de89662e9132f5e41a0eec5cba6b79f7, type: 3}
   sources:
   - {fileID: 2053522017}
   - {fileID: 2053522015}
