@@ -179,6 +179,7 @@ MonoBehaviour:
   type: 1
   clipOn: {fileID: 8300000, guid: faf9573473f577243b105c5d562047ba, type: 3}
   clipOff: {fileID: 8300000, guid: c274950aab9d0934198addabf3b4a3ab, type: 3}
+  obj: 3
 --- !u!212 &212249765015824296
 SpriteRenderer:
   m_ObjectHideFlags: 1
