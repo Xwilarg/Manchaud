@@ -86,7 +86,7 @@ public class SwitchLight : MonoBehaviour
     {
         if (state == "on")
         {
-            if (obj == Object.LIGHHIGH || obj == Object.LIGHTLOW)
+            if (obj != Object.RADIATOR && obj != Object.NOCONSO)
                 room.AddLamp();
             int i = 0;
             foreach (Sprite s in additonalSprites)
@@ -99,7 +99,7 @@ public class SwitchLight : MonoBehaviour
                 i++;
             }
         }
-        else if (obj == Object.LIGHHIGH || obj == Object.LIGHTLOW)
+        else if (obj != Object.RADIATOR && obj != Object.NOCONSO)
             room.RemoveLamp();
         currSprite.sprite = state == "on" ? spriteOn : spriteOff;
     }
