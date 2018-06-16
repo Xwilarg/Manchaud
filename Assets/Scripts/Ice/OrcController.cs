@@ -44,8 +44,25 @@ public class OrcController : MonoBehaviour
     private Sprite spriteNW;
     [SerializeField]
     private Sprite spriteSW;
+    [SerializeField]
+    private Sprite hiddenS;
+    [SerializeField]
+    private Sprite hiddenN;
+    [SerializeField]
+    private Sprite hiddenW;
+    [SerializeField]
+    private Sprite hiddenE;
+    [SerializeField]
+    private Sprite hiddenNE;
+    [SerializeField]
+    private Sprite hiddenSE;
+    [SerializeField]
+    private Sprite hiddenNW;
+    [SerializeField]
+    private Sprite hiddenSW;
 
     private Dictionary<Vector2Int, Sprite> allSprites;
+    private Dictionary<Vector2Int, Sprite> allHidens;
     private SpriteRenderer sr;
     private PolygonCollider2D coll;
     private AudioSource source;
@@ -87,6 +104,17 @@ public class OrcController : MonoBehaviour
             { new Vector2Int(-1, -1), spriteSW },
             { new Vector2Int(1, 1), spriteNE },
             { new Vector2Int(-1, 1), spriteNW },
+        };
+        allHidens = new Dictionary<Vector2Int, Sprite>()
+        {
+            { new Vector2Int(0, -1), hiddenS },
+            { new Vector2Int(0, 1), hiddenN },
+            { new Vector2Int(1, 0), hiddenE },
+            { new Vector2Int(-1, 0), hiddenW },
+            { new Vector2Int(1, -1), hiddenSE },
+            { new Vector2Int(-1, -1), hiddenSW },
+            { new Vector2Int(1, 1), hiddenNE },
+            { new Vector2Int(-1, 1), hiddenNW },
         };
         nodes = new List<Node>();
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Node"))
@@ -150,7 +178,7 @@ public class OrcController : MonoBehaviour
         SetAttackTimer();
         jumpTimer = 2f;
         jumpDir = (transform.position - player.transform.position).normalized;
-        sr.sprite = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
+        sr.sprite = allHidens[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
         Destroy(GetComponent<PolygonCollider2D>());
         gameObject.AddComponent<PolygonCollider2D>();
         SetSound(Action.attack);
@@ -164,7 +192,7 @@ public class OrcController : MonoBehaviour
             nextNode = nextNode.GetNextNode();
         else
         {
-            sr.sprite = allSprites[new Vector2Int(xDir, yDir)];
+            sr.sprite = allHidens[new Vector2Int(xDir, yDir)];
             Destroy(GetComponent<PolygonCollider2D>());
             gameObject.AddComponent<PolygonCollider2D>();
             rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
@@ -177,6 +205,7 @@ public class OrcController : MonoBehaviour
         jumpTimer -= Time.deltaTime;
         if (jumpTimer < 0f)
         {
+            sr.sprite = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
             rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
             killTimer = jumpTime;
             SetSound(Action.slide);
