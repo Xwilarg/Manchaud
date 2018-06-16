@@ -54,7 +54,7 @@ public class PenguinController : MonoBehaviour
     public void SetAlive(bool state)
     {
         isAlive = state;
-        if (state)
+        if (!isAlive)
             gameOverPanel.SetActive(true);
     }
 
