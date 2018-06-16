@@ -20,7 +20,7 @@ public class Score : MonoBehaviour
         score = 0;
         penguin = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
         text = GetComponent<Text>();
-        save = GameObject.FindObjectOfType<Save>();
+        save = FindObjectOfType<Save>();
     }
 
     private void Update()
