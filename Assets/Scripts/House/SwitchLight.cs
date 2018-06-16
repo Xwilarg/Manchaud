@@ -19,4 +19,13 @@ public class SwitchLight : MonoBehaviour
         isOn = !isOn;
         currSprite.sprite = (isOn) ? (spriteOn) : (spriteOff);
     }
+
+    public void SwitchOn()
+    {
+        if (!isOn)
+        {
+            currSprite.sprite = spriteOn;
+            isOn = true;
+        }
+    }
 }
