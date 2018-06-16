@@ -7,14 +7,14 @@ public class MusicManager : MonoBehaviour
     private AudioClip lowCold, mediumCold, highCold;
     [SerializeField]
     private AudioClip lowHot, mediumHot, highHot;
-
+    [SerializeField]
     private AudioSource[] sources;
 
     private int SourceAlternance = 0;
 
     private void Start()
     {
-        sources = GetComponents<AudioSource>();
+
     }
 
     public enum Temp
@@ -39,6 +39,7 @@ public class MusicManager : MonoBehaviour
     
     public void SetVolume(Size size, float volume)
     {
+        Debug.Log(SourceAlternance);
         // Set cold size
         if (size == Size.High)
             CrossFade(0.5f, sources[SourceAlternance], sources[SourceAlternance+1], highCold);
@@ -58,7 +59,6 @@ public class MusicManager : MonoBehaviour
             CrossFade(0.5f, sources[SourceAlternance+2], sources[(SourceAlternance + 3) % 4], lowHot);
         // Gauge intensity is = volume
         sources[1].volume = volume;
-
     }
 
     private void CrossFade(float duration, AudioSource audioOut, AudioSource audioIn, AudioClip audioFileIn)
