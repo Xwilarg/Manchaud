@@ -3,7 +3,6 @@
 [RequireComponent(typeof(AudioSource))]
 public class MusicManager : MonoBehaviour
 {
-
     [SerializeField]
     private AudioClip lowCold, mediumCold, highCold;
     [SerializeField]
