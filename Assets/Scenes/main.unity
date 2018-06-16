@@ -3455,9 +3455,10 @@ GameObject:
   m_Component:
   - component: {fileID: 952571642}
   - component: {fileID: 952571641}
+  - component: {fileID: 952571643}
   m_Layer: 0
   m_Name: ScoreManager
-  m_TagString: Untagged
+  m_TagString: ScoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3487,6 +3488,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952571643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952571640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b2e74fbf4a7fd4083fac65203abf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popup: {fileID: 1917141089087630, guid: 25ea8abd3bbd2b4459ffb891279f7952, type: 2}
+  canvas: {fileID: 284927514}
 --- !u!1001 &957506282
 Prefab:
   m_ObjectHideFlags: 0
@@ -4140,7 +4154,6 @@ GameObject:
   - component: {fileID: 1189870126}
   - component: {fileID: 1189870125}
   - component: {fileID: 1189870131}
-  - component: {fileID: 1189870130}
   m_Layer: 0
   m_Name: Cardboard
   m_TagString: Untagged
@@ -4347,39 +4360,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1.481, y: -0.9410001}
   m_SizeDelta: {x: 0.82, y: 0.52}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1189870130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1189870124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.7830189, g: 0.18836774, b: 0.64068866, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 20
-    m_Alignment: 4
-    m_AlignByGeometry: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: It's not a cardboard!
 --- !u!222 &1189870131
 CanvasRenderer:
   m_ObjectHideFlags: 0
