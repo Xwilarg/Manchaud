@@ -34,6 +34,7 @@ public class OrcController : MonoBehaviour
     private float? jumpTimer;
     private float? killTimer;
     private Vector2 jumpDir;
+    private Vector2 lastMousePos;
 
     private const float jumpTime = 0.5f;
 
@@ -74,6 +75,7 @@ public class OrcController : MonoBehaviour
         source = GetComponent<AudioSource>();
         SetSound(Action.swim);
         currMutliplicator = 1f;
+        lastMousePos = Input.mousePosition;
     }
 
     private void SetSound(Action currAction)
@@ -125,10 +127,13 @@ public class OrcController : MonoBehaviour
     private void Update()
     {
         attackTimer -= Time.deltaTime * currMutliplicator;
-        if (Input.mousePosition.x < Screen.width / 2)
+        if (lastMousePos.x == Input.mousePosition.x && lastMousePos.y == Input.mousePosition.y)
             currMutliplicator = 1f;
         else
+        {
             currMutliplicator = speedMultiplicator;
+            lastMousePos = Input.mousePosition;
+        }
         // Prepare attack
         if (attackTimer < 0f)
         {
