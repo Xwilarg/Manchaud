@@ -2,6 +2,7 @@
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Animator))]
 public class PenguinController : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -14,6 +15,9 @@ public class PenguinController : MonoBehaviour
     [SerializeField]
     private GameObject gameOverPanel;
     private bool isAlive;
+    [SerializeField]
+    private RuntimeAnimatorController controllerLeft, controllerRight;
+    private Animator animator;
 
     private AudioSource source;
     private float walkTimer;
@@ -24,6 +28,7 @@ public class PenguinController : MonoBehaviour
         source = GetComponent<AudioSource>();
         walkTimer = -1f;
         isAlive = true;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -43,6 +48,10 @@ public class PenguinController : MonoBehaviour
             source.Play();
             walkTimer = source.clip.length + 0.2f;
         }
+        if (hor > 0) // Right
+            animator.runtimeAnimatorController = controllerRight;
+        else
+            animator.runtimeAnimatorController = controllerLeft;
         Slide();
     }
 
