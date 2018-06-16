@@ -2426,9 +2426,9 @@ MonoBehaviour:
   oldRoom: {fileID: 0}
   speed: 100
   controllerLeft: {fileID: 9100000, guid: 5688502b7e02e4943b4ebc1b170b980c, type: 2}
-  controllerRight: {fileID: 9100000, guid: 8bf8ba6222aa6a74e88bc2e72d66c89c, type: 2}
-  firstFloorOffset: {x: 0, y: 0.4, z: 0}
-  secondFloorOffset: {x: 0, y: 0.2, z: 0}
+  controllerRight: {fileID: 9100000, guid: 11b8d602577e9584490f2ed86dd02dbc, type: 2}
+  firstFloorOffset: {x: 0, y: 0, z: 0}
+  secondFloorOffset: {x: 0, y: 0, z: 0}
   switchOnRate: 50
   walkingClips:
   - {fileID: 8300000, guid: 5d0229fb178a69b40bd88895b0cf9374, type: 3}
@@ -4776,7 +4776,7 @@ SpriteRenderer:
   m_Size: {x: 0.69, y: 1.78}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1436816101
 Transform:
