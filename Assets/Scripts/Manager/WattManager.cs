@@ -29,10 +29,10 @@ public class WattManager : MonoBehaviour
     private void Update()
     {
         float watt = (allObjs.Sum(x => x.GetConso()) * 500f / 0.5f) - 250f;
-        float cursorWatt = (watt > 250f) ? (250f) : (watt);
+        float cursorWatt = (watt > 240f) ? (240f) : (watt);
+        if (cursorWatt < -240f) cursorWatt = -240f;
         cursor.localPosition = new Vector2(0f, cursorWatt);
         float volume = (cursorWatt + 250f) / 500f;
-        music.SetVolume(MusicManager.Size.Low, volume);
         if (watt < 90)
             watt = 0;
         watt = watt * 0.1f / 250f * Time.deltaTime;
@@ -46,7 +46,8 @@ public class WattManager : MonoBehaviour
         else if (size == MusicManager.Size.Medium && ice.localScale.x < 0.33f)
         {
             size = MusicManager.Size.High;
-            music.Play(size, volume);   
+            music.Play(size, volume);
         }
+        music.SetVolume(MusicManager.Size.Low, volume);
     }
 }
