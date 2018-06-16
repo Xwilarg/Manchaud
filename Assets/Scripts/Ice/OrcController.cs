@@ -3,8 +3,8 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class OrcController : MonoBehaviour {
-
+public class OrcController : MonoBehaviour
+{
     [Header("Movements")]
     [SerializeField]
     private Node firstNode;

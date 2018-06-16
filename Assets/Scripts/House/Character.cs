@@ -3,8 +3,8 @@
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Character : MonoBehaviour {
-
+public class Character : MonoBehaviour
+{
     private Rigidbody2D rb;
     [SerializeField]
     private Room room, oldRoom;
@@ -15,7 +15,7 @@ public class Character : MonoBehaviour {
     private SpriteRenderer sr;
     private Directions direction;
     private bool tookStairs;
-    private enum Directions { LEFT, RIGHT };
+    private enum Directions { LEFT, RIGHT }
     [SerializeField]
     private Vector3 firstFloorOffset, secondFloorOffset;
 

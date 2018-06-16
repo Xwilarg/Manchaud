@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class SwitchLight : MonoBehaviour {
-
+public class SwitchLight : MonoBehaviour
+{
     [SerializeField]
     private Sprite spriteOn, spriteOff;
     private bool isOn;
