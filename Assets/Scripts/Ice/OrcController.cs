@@ -124,6 +124,57 @@ public class OrcController : MonoBehaviour
             collision.GetComponent<Rigidbody2D>().AddTorque(float.MaxValue);
     }
 
+    private void PrepareAttack()
+    {
+        SetAttackTimer();
+        jumpTimer = 2f;
+        jumpDir = (transform.position - player.transform.position).normalized;
+        SetSound(Action.attack);
+    }
+
+    private void Swim()
+    {
+        float xDir = GetXDirection();
+        float yDir = GetYDirection();
+        if (xDir == 0 && yDir == 0)
+            nextNode = nextNode.GetNextNode();
+        else
+            rb.velocity = new Vector2(xDir * speed * Time.deltaTime * currMutliplicator, yDir * speed * Time.deltaTime * currMutliplicator);
+    }
+
+    private void Jump()
+    {
+        rb.velocity = Vector2.zero;
+        jumpTimer -= Time.deltaTime * currMutliplicator;
+        if (jumpTimer < 0f)
+        {
+            rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
+            killTimer = jumpTime;
+            SetSound(Action.slide);
+        }
+    }
+
+    private void GoBackSwim()
+    {
+        killTimer -= Time.deltaTime;
+        if (killTimer < 0f)
+        {
+            killTimer = null;
+            jumpTimer = null;
+            float? minDistance = null;
+            foreach (Node n in nodes)
+            {
+                float currDistance = Vector2.Distance(transform.position, n.transform.position);
+                if (minDistance == null || currDistance < minDistance)
+                {
+                    minDistance = currDistance;
+                    nextNode = n;
+                }
+            }
+            SetSound(Action.swim);
+        }
+    }
+
     private void Update()
     {
         attackTimer -= Time.deltaTime * currMutliplicator;
@@ -134,56 +185,13 @@ public class OrcController : MonoBehaviour
             currMutliplicator = speedMultiplicator;
             lastMousePos = Input.mousePosition;
         }
-        // Prepare attack
         if (attackTimer < 0f)
-        {
-            SetAttackTimer();
-            jumpTimer = 2f;
-            jumpDir = (transform.position - player.transform.position).normalized;
-            SetSound(Action.attack);
-        }
-        // Swim
+            PrepareAttack();
         if (jumpTimer == null)
-        {
-            float xDir = GetXDirection();
-            float yDir = GetYDirection();
-            if (xDir == 0 && yDir == 0)
-                nextNode = nextNode.GetNextNode();
-            else
-                rb.velocity = new Vector2(xDir * speed * Time.deltaTime * currMutliplicator, yDir * speed * Time.deltaTime * currMutliplicator);
-        }
-        // Jump
+            Swim();
         else if (killTimer == null)
-        {
-            rb.velocity = Vector2.zero;
-            jumpTimer -= Time.deltaTime * currMutliplicator;
-            if (jumpTimer < 0f)
-            {
-                rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
-                killTimer = jumpTime;
-                SetSound(Action.slide);
-            }
-        }
-        // Go back to swim
+            Jump();
         else
-        {
-            killTimer -= Time.deltaTime;
-            if (killTimer < 0f)
-            {
-                killTimer = null;
-                jumpTimer = null;
-                float? minDistance = null;
-                foreach (Node n in nodes)
-                {
-                    float currDistance = Vector2.Distance(transform.position, n.transform.position);
-                    if (minDistance == null || currDistance < minDistance)
-                    {
-                        minDistance = currDistance;
-                        nextNode = n;
-                    }
-                }
-                SetSound(Action.swim);
-            }
-        }
+            GoBackSwim();
     }
 }
