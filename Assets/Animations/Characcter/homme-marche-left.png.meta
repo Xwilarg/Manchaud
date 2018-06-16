@@ -92,16 +92,16 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21edbd731bb4ac1419b2b828c829e57c
+      spriteID: 7d127e1c9a4ce2f4083d03b00d79b3ba
       vertices: []
       indices: 
       edges: []
@@ -110,18 +110,18 @@ TextureImporter:
       name: homme-marche-left_1
       rect:
         serializedVersion: 2
-        x: 267
+        x: 59
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f104719e158d41544b16e2fc160b292c
+      spriteID: a0e6347ff2ca7584e9bf845c844226cc
       vertices: []
       indices: 
       edges: []
@@ -130,18 +130,18 @@ TextureImporter:
       name: homme-marche-left_2
       rect:
         serializedVersion: 2
-        x: 534
+        x: 118
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c19ea0c05a1f4c48830f8f3d117cdbd
+      spriteID: 0f8b31f438848604f8a28c9779af6893
       vertices: []
       indices: 
       edges: []
@@ -150,18 +150,18 @@ TextureImporter:
       name: homme-marche-left_3
       rect:
         serializedVersion: 2
-        x: 801
+        x: 177
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65c41d0673c4ace4aabc16f560dc88b8
+      spriteID: 5debe3137d4d8d94a969846f16b17e74
       vertices: []
       indices: 
       edges: []
@@ -170,18 +170,18 @@ TextureImporter:
       name: homme-marche-left_4
       rect:
         serializedVersion: 2
-        x: 1068
+        x: 236
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46aacdd03830dc04c87f3df09a4e9551
+      spriteID: 0563d0acb497054489e0765cbef03b59
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 001cbfe8f65a0234689267aad454dddf
+    spriteID: 3f323fcf0d104be418077274db86381f
     vertices: []
     indices: 
     edges: []

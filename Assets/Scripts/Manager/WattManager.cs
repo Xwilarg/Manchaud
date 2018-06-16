@@ -28,7 +28,7 @@ public class WattManager : MonoBehaviour
 
     private void Update()
     {
-        float watt = (allObjs.Sum(x => x.GetConso()) * 500f / 0.5f) - 250f;
+        float watt = (allObjs.Sum(x => x.GetConso()) * 500f) - 250f;
         float cursorWatt = (watt > 240f) ? (240f) : (watt);
         if (cursorWatt < -240f) cursorWatt = -240f;
         cursor.localPosition = new Vector2(0f, cursorWatt);
