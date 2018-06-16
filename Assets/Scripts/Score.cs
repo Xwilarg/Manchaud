@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
     [SerializeField]
     private int scoreStep;
-    private int score;
+    private float score;
     private PenguinController penguin;
     private bool uploadDone;
     private bool uploadStart;
@@ -16,18 +16,12 @@ public class Score : MonoBehaviour
     {
         score = 0;
         penguin = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
-        uploadDone = false;
-        uploadStart = false;
     }
 
     public void Update()
     {
-        score += scoreStep * (int)Time.deltaTime;
-        if (!penguin.IsAlive())
-        {
-            if (!uploadStart)
-                StartCoroutine(Upload());
-        }
+        if (penguin.IsAlive())
+            score += (float)scoreStep * Time.deltaTime;
     }
 
     public IEnumerator Upload()
@@ -51,5 +45,10 @@ public class Score : MonoBehaviour
             uploadDone = true;
             Debug.Log("Form upload complete!");
         }
+    }
+
+    public int GetScore()
+    {
+        return (int)score;
     }
 }
