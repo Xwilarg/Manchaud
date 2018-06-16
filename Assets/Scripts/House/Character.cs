@@ -25,13 +25,17 @@ public class Character : MonoBehaviour
         {
             oldRoom = room;
             room = other.GetComponent<Room>();
+            SwitchLight[] devices = room.GetComponentsInChildren<SwitchLight>();
+            foreach (SwitchLight device in devices)
+            {
+                devices.SwitchOn();
+            }
             if (!tookStairs && room.HasStairs())
             {
                 if (room.GetDown() != null && room.GetDown() != oldRoom)
                     rb.MovePosition(room.GetDown().transform.position - firstFloorOffset);
                 else if (room.GetUp() != null && room.GetUp() != oldRoom)
                     rb.MovePosition(room.GetUp().transform.position - secondFloorOffset);
-                tookStairs = true;
             }
         }
     }
@@ -40,11 +44,9 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         direction = Directions.RIGHT;
-        tookStairs = true;
 	}
 	
 	private void Update () {
-        tookStairs = false;
         if (direction != Directions.LEFT && room.GetLeft() != null)
         {
             direction = Directions.LEFT;
