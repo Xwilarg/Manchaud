@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ba1bfacbb4a13647804eddac219fb7c
+guid: 7013cd6ce1b118143b50c40ba3be9af9
 TextureImporter:
   fileIDToRecycleName:
     21300000: homme-marche_0
@@ -92,16 +92,16 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 267
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b27fc4eca03c77c4197dafe6bf22caf1
+      spriteID: bf2d501cead4136478e81de0dc7fdd82
       vertices: []
       indices: 
       edges: []
@@ -110,18 +110,18 @@ TextureImporter:
       name: homme-marche_1
       rect:
         serializedVersion: 2
-        x: 267
+        x: 59
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d61f581e9bcc73d41bd1dd4934c3c743
+      spriteID: 37ba09d48f1539e45ac56f0c3addbee6
       vertices: []
       indices: 
       edges: []
@@ -130,18 +130,18 @@ TextureImporter:
       name: homme-marche_2
       rect:
         serializedVersion: 2
-        x: 534
+        x: 118
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8400fb944a208eb47ac7b14008110a2f
+      spriteID: 2b8ccf76c8c5517458be58ebb0de9a9f
       vertices: []
       indices: 
       edges: []
@@ -150,18 +150,18 @@ TextureImporter:
       name: homme-marche_3
       rect:
         serializedVersion: 2
-        x: 801
+        x: 177
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 640ce477cb0da9f44b7824fb180623f5
+      spriteID: 940ba0e86c0a8884c89e38b5c9aeecf2
       vertices: []
       indices: 
       edges: []
@@ -170,18 +170,18 @@ TextureImporter:
       name: homme-marche_4
       rect:
         serializedVersion: 2
-        x: 1068
+        x: 236
         y: 0
-        width: 267.2
-        height: 641
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 59.4
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc641be4244eaaf4eb6d2f7e18544e2f
+      spriteID: cc11a6092183f064688381ba9b79e0a9
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bef991e2611b33c4e9ae8edee79157be
+    spriteID: f26cf08e0cba50b498763cc3c53d282c
     vertices: []
     indices: 
     edges: []
