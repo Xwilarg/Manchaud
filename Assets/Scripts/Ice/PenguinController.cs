@@ -48,23 +48,28 @@ public class PenguinController : MonoBehaviour
             source.Play();
             walkTimer = source.clip.length + 0.2f;
         }
+        AnimateDirection(hor, ver);
+        Slide();
+    }
+
+    private void AnimateDirection(float hor, float ver)
+    {
         if (hor > 0.5f && (ver > -0.5f && ver < 0.5f)) // Right
             animator.runtimeAnimatorController = controllerRight;
         else if (hor > 0.5f && ver < -0.5f) // Bottom-Right
             animator.runtimeAnimatorController = controllerBotRight;
-        else if ((hor < 0.5f && hor > -0.5f) && ver < -0.5f)
+        else if ((hor < 0.5f && hor > -0.5f) && ver < -0.5f) // Bottom
             animator.runtimeAnimatorController = controllerBot;
-        else if (hor < -0.5f && ver < -0.5f)
+        else if (hor < -0.5f && ver < -0.5f) // Bottom-Left
             animator.runtimeAnimatorController = controllerBotLeft;
         else if (hor < -0.5f && (ver > -0.5f && ver < 0.5f)) // Left
             animator.runtimeAnimatorController = controllerLeft;
-        else if (hor < -0.5f && ver > 0.5f)
+        else if (hor < -0.5f && ver > 0.5f) // Top-Left
             animator.runtimeAnimatorController = controllerTopLeft;
-        else if ((hor < -0.5f && hor > 0.5f) && ver > 0.5f)
+        else if ((hor < -0.5f && hor > 0.5f) && ver > 0.5f) // Top
             animator.runtimeAnimatorController = controllerTop;
-        else if (hor > 0.5f && ver > 0.5f)
+        else if (hor > 0.5f && ver > 0.5f) // Top-Right;
             animator.runtimeAnimatorController = controllerTopRight;
-        Slide();
     }
 
     private void Slide()
