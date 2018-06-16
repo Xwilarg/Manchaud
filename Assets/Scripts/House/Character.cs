@@ -20,6 +20,10 @@ public class Character : MonoBehaviour
     private Vector3 firstFloorOffset, secondFloorOffset;
     [SerializeField]
     private int switchOnRate;
+    [SerializeField]
+    private AudioClip[] walkingClips;
+    private AudioSource audioSrc;
+    private int step;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -51,9 +55,13 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         direction = Directions.RIGHT;
+        audioSrc = GetComponent<AudioSource>();
+        step = 0;
 	}
 	
-	private void Update () {
+	private void FixedUpdate () {
+        if (step++ % 30 == 0)
+            audioSrc.PlayOneShot(walkingClips[Random.Range(0, 5)], 0.3f);
         if (direction != Directions.LEFT && room.GetLeft() != null)
         {
             direction = Directions.LEFT;
