@@ -76,7 +76,10 @@ public class PenguinController : MonoBehaviour
     {
         isAlive = state;
         if (!isAlive)
+        {
+            animator.runtimeAnimatorController = null;
             gameOverPanel.SetActive(true);
+        }
     }
 
     public bool IsAlive()
