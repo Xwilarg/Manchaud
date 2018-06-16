@@ -26,6 +26,8 @@ public class Room : MonoBehaviour {
 
     private void Update()
     {
+        if (radiator == null)
+            return;
         if (radiator.IsOn())
         {
             temperature += 3f * Time.deltaTime;
