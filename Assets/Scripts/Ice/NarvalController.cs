@@ -6,12 +6,16 @@ public class NarvalController : MonoBehaviour
     private float minTime, maxTime;
     [SerializeField]
     private GameObject shadowNarval, hornNarval;
+    [SerializeField]
+    private AudioClip attackClip, perceClip;
 
     private Transform playerPos;
 
     private float timerPrepare;
     private float? timerAim;
     private float? timerRest;
+
+    private AudioSource source;
 
     GameObject curr;
 
@@ -23,6 +27,7 @@ public class NarvalController : MonoBehaviour
     private void Start()
     {
         GenerateTimer();
+        source = GetComponent<AudioSource>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         curr = null;
     }
@@ -46,6 +51,8 @@ public class NarvalController : MonoBehaviour
             {
                 Vector3 pos = curr.transform.position;
                 Destroy(curr);
+                source.clip = perceClip;
+                source.Play();
                 timerAim = null;
                 curr = Instantiate(hornNarval, pos, Quaternion.identity);
                 timerRest = 2f;
@@ -54,6 +61,8 @@ public class NarvalController : MonoBehaviour
         else if (timerPrepare < 0f)
         {
             timerAim = 2f;
+            source.clip = attackClip;
+            source.Play();
             curr = Instantiate(shadowNarval, playerPos.position, Quaternion.identity);
         }
         else
