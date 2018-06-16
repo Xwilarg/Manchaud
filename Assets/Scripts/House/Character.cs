@@ -63,7 +63,6 @@ public class Character : MonoBehaviour
 
     private void TakeStairs()
     {
-        Debug.Log(Random.Range(0, 100));
         if (Random.Range(0, 100) > takeStairsRate)
             return;
         if (!tookStairs && room.HasStairs())
