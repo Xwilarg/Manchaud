@@ -39,6 +39,6 @@ public class PenguinController : MonoBehaviour
 
     private void Slide()
     {
-        rb.velocity = new Vector2(-ice.transform.rotation.z * 10, rb.velocity.y);
+        rb.velocity += new Vector2(-ice.transform.rotation.z * 10, 0);
     }
 }
