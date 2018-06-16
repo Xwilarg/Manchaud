@@ -13,9 +13,11 @@ public class SpecialCardBoard : MonoBehaviour {
     [SerializeField]
     private AudioClip breakClip;
     private AudioSource audioSource;
-    AchievementManager am;
+    private AchievementManager am;
+    private PenguinController player;
     
 	private void Start () {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
         hits = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
@@ -24,7 +26,8 @@ public class SpecialCardBoard : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        ++hits;
+        if (player.IsAlive())
+            ++hits;
     }
     
     private void Update () {

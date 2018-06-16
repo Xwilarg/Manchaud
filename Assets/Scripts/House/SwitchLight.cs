@@ -24,6 +24,8 @@ public class SwitchLight : MonoBehaviour
     private float currConso;
     private Room room;
 
+    private PenguinController player;
+
     public Object GetObject() { return (obj); }
     public bool IsOn() { return (isOn); }
 
@@ -39,7 +41,8 @@ public class SwitchLight : MonoBehaviour
 
     private void Start()
     {
-        Debug.Assert(additonalStats.Length == additonalSprites.Length, "add sprites and add stats must be same length");
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
         room = transform.parent.GetComponent<Room>();
         currSprite = GetComponent<SpriteRenderer>();
         isOn = (currSprite.sprite == spriteOn);
@@ -106,7 +109,7 @@ public class SwitchLight : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (obj != Object.RADIATOR)
+        if (obj != Object.RADIATOR && player.IsAlive())
         {
             if (isOn)
                 SwitchOff();
