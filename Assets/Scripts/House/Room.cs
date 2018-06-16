@@ -16,12 +16,30 @@ public class Room : MonoBehaviour {
     private SwitchLight radiator;
     [SerializeField]
     private SwitchLight[] doors;
+    [SerializeField]
+    private GameObject filter;
+
+    private int nbLamp;
 
     private float temperature;
+
+    public void AddLamp()
+    {
+        nbLamp++;
+        if (nbLamp == 1)
+            filter.SetActive(false);
+    }
+    public void RemoveLamp()
+    {
+        nbLamp--;
+        if (nbLamp == 0)
+            filter.SetActive(true);
+    }
 
     private void Start()
     {
         temperature = 23f;
+        nbLamp = 0;
     }
 
     private void Update()
