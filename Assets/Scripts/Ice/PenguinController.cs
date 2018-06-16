@@ -11,6 +11,8 @@ public class PenguinController : MonoBehaviour
     private AudioClip[] movSounds;
     [SerializeField]
     private Rigidbody2D ice;
+    [SerializeField]
+    private GameObject gameOverPanel;
     private bool isAlive;
 
     private AudioSource source;
@@ -26,6 +28,11 @@ public class PenguinController : MonoBehaviour
 
     private void Update()
     {
+        if (!isAlive)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         rb.velocity = new Vector2(hor * speed * Time.deltaTime, ver * speed * Time.deltaTime);
@@ -47,6 +54,8 @@ public class PenguinController : MonoBehaviour
     public void SetAlive(bool state)
     {
         isAlive = state;
+        if (state)
+            gameOverPanel.SetActive(true);
     }
 
     public bool IsAlive()
