@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(AudioSource))]
@@ -22,7 +23,6 @@ public class SpecialCardBoard : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        Debug.Log("Hit");
         ++hits;
     }
 
@@ -37,6 +37,6 @@ public class SpecialCardBoard : MonoBehaviour {
         hits++;
         spriteRenderer.sprite = breakSprite;
         audioSource.PlayOneShot(breakClip);
-        Debug.Log("It's not a cardboard");
+        GetComponent<Text>().enabled = true;
     }
 }
