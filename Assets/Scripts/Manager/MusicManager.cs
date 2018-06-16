@@ -90,5 +90,5 @@ public class MusicManager : MonoBehaviour
         }
         // Set volume to 1 to finish the FadeIn
         audioIn.volume = 1.0f;
-    } 
+    }
 }
