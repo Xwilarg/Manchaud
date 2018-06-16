@@ -18,6 +18,8 @@ public class Character : MonoBehaviour
     private enum Directions { LEFT, RIGHT }
     [SerializeField]
     private Vector3 firstFloorOffset, secondFloorOffset;
+    [SerializeField]
+    private int switchOnRate;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,9 +30,12 @@ public class Character : MonoBehaviour
             Transform[] devices = room.GetComponentsInChildren<Transform>();
             foreach (Transform device in devices)
             {
-                SwitchLight sl = device.GetComponent<SwitchLight>();
-                if (sl != null)
-                    sl.SwitchOn();
+                if (Random.Range(1, 100) < switchOnRate)
+                {
+                    SwitchLight sl = device.GetComponent<SwitchLight>();
+                    if (sl != null)
+                        sl.SwitchOn();
+                }
             }
             if (!tookStairs && room.HasStairs())
             {
