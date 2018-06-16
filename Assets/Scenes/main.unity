@@ -1049,6 +1049,7 @@ MonoBehaviour:
   spriteRight: {fileID: 21300000, guid: 7a5494445903fe043892859d3c31e86e, type: 3}
   firstFloorOffset: {x: 0, y: 0.4, z: 0}
   secondFloorOffset: {x: 0, y: 0.2, z: 0}
+  switchOnRate: 50
 --- !u!50 &724072950
 Rigidbody2D:
   serializedVersion: 4
@@ -2301,6 +2302,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114580295665001280, guid: b905ee0440d5e39458139abe1fb085f0,
+        type: 2}
+      propertyPath: spriteOff
+      value: 
+      objectReference: {fileID: 21300000, guid: c2217efb63cc8f4439ac15000cc4e302,
+        type: 3}
+    - target: {fileID: 114580295665001280, guid: b905ee0440d5e39458139abe1fb085f0,
+        type: 2}
+      propertyPath: spriteOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 58dfa0929275a254ea9648a07a28edbf,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b905ee0440d5e39458139abe1fb085f0, type: 2}
   m_IsPrefabParent: 0

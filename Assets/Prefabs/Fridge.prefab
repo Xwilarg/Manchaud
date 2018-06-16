@@ -80,6 +80,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteOn: {fileID: 21300000, guid: c2217efb63cc8f4439ac15000cc4e302, type: 3}
   spriteOff: {fileID: 21300000, guid: 58dfa0929275a254ea9648a07a28edbf, type: 3}
+  type: 0
+  clipOn: {fileID: 8300000, guid: 73b185188b2525047a43187fcab6cbf5, type: 3}
+  clipOff: {fileID: 8300000, guid: 1720b04a643d75d46b8360356b442866, type: 3}
 --- !u!212 &212590463233907220
 SpriteRenderer:
   m_ObjectHideFlags: 1
