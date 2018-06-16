@@ -8,8 +8,6 @@ public class OrcController : MonoBehaviour
 {
     [Header("Movements")]
     [SerializeField]
-    private Node firstNode;
-    [SerializeField]
     private float speed;
     [SerializeField]
     private float step;
@@ -63,6 +61,7 @@ public class OrcController : MonoBehaviour
     private Rigidbody2D rb;
 
     private List<Node> nodes;
+    private Node firstNode;
 
     private enum Action
     {
@@ -78,7 +77,6 @@ public class OrcController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Assert(minTimeJump < maxTimeJump, "min time must be < to max time");
         allSprites = new Dictionary<Vector2Int, Sprite>()
         {
             { new Vector2Int(0, -1), spriteS },
@@ -95,6 +93,7 @@ public class OrcController : MonoBehaviour
         {
             nodes.Add(go.GetComponent<Node>());
         }
+        firstNode = nodes[0];
         nextNode = firstNode.GetNextNode();
         rb = GetComponent<Rigidbody2D>();
         SetAttackTimer();
@@ -154,6 +153,7 @@ public class OrcController : MonoBehaviour
         sr.sprite = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
         Destroy(GetComponent<PolygonCollider2D>());
         gameObject.AddComponent<PolygonCollider2D>();
+        gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
         SetSound(Action.attack);
     }
 
@@ -168,6 +168,7 @@ public class OrcController : MonoBehaviour
             sr.sprite = allSprites[new Vector2Int(xDir, yDir)];
             Destroy(GetComponent<PolygonCollider2D>());
             gameObject.AddComponent<PolygonCollider2D>();
+            gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
             rb.velocity = new Vector2(xDir * speed * Time.deltaTime, yDir * speed * Time.deltaTime);
         }
     }
