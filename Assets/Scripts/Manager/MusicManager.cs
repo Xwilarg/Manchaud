@@ -74,7 +74,7 @@ public class MusicManager : MonoBehaviour
     private void FadeOut(float duration, AudioSource audioOut)
     {
         // Linearly Fade Out audio
-        while (audioOut.volume > 0.1)
+       // while (audioOut.volume > 0.1)
         {
             audioOut.volume = Mathf.Lerp(audioOut.volume, 0.0f, duration * Time.deltaTime);
         }
@@ -87,7 +87,7 @@ public class MusicManager : MonoBehaviour
     {
         audioIn.Play();
         // Linearly Fade In audio
-        while (audioIn.volume < 0.9)
+       // while (audioIn.volume < 0.9)
         {
             audioIn.volume = Mathf.Lerp(audioIn.volume, 0.0f, duration * Time.deltaTime);
         }
