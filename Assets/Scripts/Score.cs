@@ -11,12 +11,14 @@ public class Score : MonoBehaviour
     private int score;
     private PenguinController penguin;
     private bool uploadDone;
+    private bool uploadStart;
 
     public void Start()
     {
         score = 0;
         penguin = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
         uploadDone = false;
+        uploadStart = false;
     }
 
     public void Update()
@@ -24,7 +26,8 @@ public class Score : MonoBehaviour
         score += scoreStep * (int)Time.deltaTime;
         if (!penguin.IsAlive())
         {
-            StartCoroutine(Upload());
+            if (!uploadStart)
+                StartCoroutine(Upload());
             if (uploadDone)
                 SceneManager.LoadScene("MainMenu");
         }
@@ -32,12 +35,14 @@ public class Score : MonoBehaviour
 
     public IEnumerator Upload()
     {
+        Debug.Log("Start upload");
         WWWForm form = new WWWForm();
         form.AddField("name", "userTest");
-        form.AddField("score", score);
+        form.AddField("score", score.ToString());
         form.AddField("version", "0.1.9");
 
         UnityWebRequest www = UnityWebRequest.Post("https://zirk.eu/Manchaud/manchaud.php", form);
+        uploadStart = true;
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
@@ -46,8 +51,8 @@ public class Score : MonoBehaviour
         }
         else
         {
+            uploadDone = true;
             Debug.Log("Form upload complete!");
         }
-        uploadDone = true;
     }
 }
