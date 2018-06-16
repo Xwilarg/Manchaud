@@ -60,7 +60,7 @@ public class NarvalController : MonoBehaviour
         }
         else if (timerPrepare < 0f)
         {
-            timerAim = 2f;
+            timerAim = 1f;
             source.clip = attackClip;
             source.Play();
             curr = Instantiate(shadowNarval, playerPos.position, Quaternion.identity);
