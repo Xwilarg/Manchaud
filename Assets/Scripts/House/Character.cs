@@ -45,6 +45,10 @@ public class Character : MonoBehaviour
             SwitchOnDevices();
             TakeStairs();
         }
+        else if (other.GetComponent<SwitchLight>().IsDoor())
+        {
+            other.GetComponent<SwitchLight>().SwitchOn();
+        }
     }
 
     private void SwitchOnDevices()
