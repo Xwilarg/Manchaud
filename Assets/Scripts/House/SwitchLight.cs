@@ -10,7 +10,7 @@ public class SwitchLight : MonoBehaviour
     private SpriteRenderer currSprite;
     [SerializeField]
     private Type type;
-    enum Type { FRIDGE, LIGHT, RADIATOR };
+    enum Type { FRIDGE, LIGHT, RADIATOR }
     private AudioSource audioSrc;
     [SerializeField]
     private AudioClip clipOn, clipOff;
