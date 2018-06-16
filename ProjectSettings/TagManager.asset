@@ -52,6 +52,9 @@ TagManager:
   - name: HouseMaterialBackground
     uniqueID: 395789959
     locked: 0
+  - name: HouseMaterialStatic
+    uniqueID: 3088801271
+    locked: 0
   - name: HouseMaterial
     uniqueID: 2910264447
     locked: 0
