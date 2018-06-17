@@ -21,6 +21,9 @@ public class PenguinController : MonoBehaviour
     private RuntimeAnimatorController deathRight, deathBotRight, deathBot, deathBotLeft, deathLeft, deathTopLeft, deathTop, deathTopRight;
     private Animator animator;
 
+    [SerializeField]
+    private bool killable;
+
     private AudioSource source;
     private float walkTimer;
 
@@ -108,6 +111,8 @@ public class PenguinController : MonoBehaviour
 
     public bool IsAlive()
     {
+        if (!killable)
+            return true;
         return isAlive;
     }
 }
