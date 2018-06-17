@@ -5264,6 +5264,14 @@ MonoBehaviour:
   controllerTopLeft: {fileID: 9100000, guid: a63a06066926b7541849406df373c040, type: 2}
   controllerTop: {fileID: 9100000, guid: 21de0a8f5baef7043a59457be1555910, type: 2}
   controllerTopRight: {fileID: 9100000, guid: fc7d35ab8bd2b42489a1db2cf6fb11e9, type: 2}
+  deathRight: {fileID: 9100000, guid: 5e7bd214ae6698843856dbdea6e94a5e, type: 2}
+  deathBotRight: {fileID: 9100000, guid: 4118021f41977374d859ae2024152d20, type: 2}
+  deathBot: {fileID: 9100000, guid: 82de61694e0089045aa9174a77277325, type: 2}
+  deathBotLeft: {fileID: 9100000, guid: 82de61694e0089045aa9174a77277325, type: 2}
+  deathLeft: {fileID: 9100000, guid: 097c094e98a377f44971219f16a56b42, type: 2}
+  deathTopLeft: {fileID: 9100000, guid: 115558c13040f204f934ea4030aa5bd3, type: 2}
+  deathTop: {fileID: 9100000, guid: 115558c13040f204f934ea4030aa5bd3, type: 2}
+  deathTopRight: {fileID: 9100000, guid: f49d5ab74b314ae4e87982936468041d, type: 2}
 --- !u!61 &1436816104
 BoxCollider2D:
   m_ObjectHideFlags: 0

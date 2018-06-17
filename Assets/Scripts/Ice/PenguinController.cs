@@ -17,6 +17,8 @@ public class PenguinController : MonoBehaviour
     private bool isAlive;
     [SerializeField]
     private RuntimeAnimatorController controllerRight, controllerBotRight, controllerBot, controllerBotLeft, controllerLeft, controllerTopLeft, controllerTop, controllerTopRight;
+    [SerializeField]
+    private RuntimeAnimatorController deathRight, deathBotRight, deathBot, deathBotLeft, deathLeft, deathTopLeft, deathTop, deathTopRight;
     private Animator animator;
 
     private AudioSource source;
@@ -75,6 +77,23 @@ public class PenguinController : MonoBehaviour
     private void Slide()
     {
         rb.velocity += new Vector2(-ice.transform.rotation.z * 10, 0);
+    }
+
+    public void Sink()
+    {
+        isAlive = false;
+        gameOverPanel.SetActive(true);
+        isAlive = false;
+        gameOverPanel.SetActive(true);
+
+        if (animator.runtimeAnimatorController == controllerRight) animator.runtimeAnimatorController = deathRight;
+        if (animator.runtimeAnimatorController == controllerBot) animator.runtimeAnimatorController = deathBot;
+        if (animator.runtimeAnimatorController == controllerBotRight) animator.runtimeAnimatorController = deathBotRight;
+        if (animator.runtimeAnimatorController == controllerBotLeft) animator.runtimeAnimatorController = deathBotLeft;
+        if (animator.runtimeAnimatorController == controllerLeft) animator.runtimeAnimatorController = deathLeft;
+        if (animator.runtimeAnimatorController == controllerTopLeft) animator.runtimeAnimatorController = deathTopLeft;
+        if (animator.runtimeAnimatorController == controllerTop) animator.runtimeAnimatorController = deathTop;
+        if (animator.runtimeAnimatorController == controllerTopRight) animator.runtimeAnimatorController = deathTopRight;
     }
 
     public void SetAlive(bool state)
