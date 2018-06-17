@@ -6,8 +6,7 @@
 public class PenguinController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField]
-    private float speed;
+    private const float speed = 120f;
     [SerializeField]
     private AudioClip[] movSounds;
     [SerializeField]
