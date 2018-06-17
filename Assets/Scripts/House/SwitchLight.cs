@@ -25,6 +25,11 @@ public class SwitchLight : MonoBehaviour
     private Room room;
 
     [SerializeField]
+    private Sprite[] numbers;
+    private int currNb;
+
+    [SerializeField]
+    private SpriteRenderer childSprite;
 
     private PenguinController player;
 
@@ -43,7 +48,7 @@ public class SwitchLight : MonoBehaviour
 
     private void Start()
     {
-
+        currNb = 0;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
         room = transform.parent.GetComponent<Room>();
         currSprite = GetComponent<SpriteRenderer>();
@@ -91,6 +96,11 @@ public class SwitchLight : MonoBehaviour
     {
         if (state == "on")
         {
+            if (childSprite != null && numbers.Length != 0)
+            {
+                currNb = numbers.Length - 1;
+                childSprite.sprite = numbers[currNb];
+            }
             if (obj != Object.RADIATOR && obj != Object.NOCONSO)
                 room.AddLamp();
             int i = 0;
@@ -113,8 +123,17 @@ public class SwitchLight : MonoBehaviour
     {
         if (obj != Object.RADIATOR && player.IsAlive())
         {
-            if (isOn)
+            if (currNb > 0)
+            {
+                currNb--;
+                childSprite.sprite = numbers[currNb];
+            }
+            else if (isOn)
+            {
+                if (childSprite != null)
+                    childSprite.sprite = null;
                 SwitchOff();
+            }
             else
                 SwitchOn();
         }
