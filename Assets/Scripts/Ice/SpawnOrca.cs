@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class SpawnOrca : MonoBehaviour {
-
+public class SpawnOrca : MonoBehaviour
+{
     [SerializeField]
     private GameObject orca;
 
