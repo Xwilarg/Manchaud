@@ -33,6 +33,8 @@ public class SwitchLight : MonoBehaviour
 
     private PenguinController player;
 
+    private float rawConso;
+
     public Object GetObject() { return (obj); }
     public bool IsOn() { return (isOn); }
 
@@ -49,6 +51,7 @@ public class SwitchLight : MonoBehaviour
     private void Start()
     {
         currNb = 0;
+        rawConso = 0f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
         room = transform.parent.GetComponent<Room>();
         currSprite = GetComponent<SpriteRenderer>();
@@ -82,6 +85,8 @@ public class SwitchLight : MonoBehaviour
 
     public float GetConso()
     {
+        if (obj == Object.RADIATOR)
+            return (secConso + rawConso * Time.deltaTime * 2f);
         if (isOn)
             return (secConso);
         return (0f);
@@ -89,7 +94,13 @@ public class SwitchLight : MonoBehaviour
 
     private void Update()
     {
-        currConso += Time.deltaTime * secConso;
+        if (isOn)
+        {
+            currConso += Time.deltaTime * secConso;
+            rawConso += Time.deltaTime * secConso;
+        }
+        else
+            rawConso = 0f;
     }
 
     private void SetSprite(string state)
