@@ -67,7 +67,7 @@ public class NarvalController : MonoBehaviour
             timerAim = 1f;
             source.clip = attackClip;
             source.Play();
-            curr = Instantiate(shadowNarval, playerPos.position, Quaternion.identity);
+            curr = Instantiate(shadowNarval, playerPos.position + new Vector3(0f, 1f), Quaternion.identity);
         }
         else
             timerPrepare -= Time.deltaTime;

@@ -24,6 +24,8 @@ public class PenguinController : MonoBehaviour
     [SerializeField]
     private bool killable;
 
+    private float? gameOverTimer = null;
+
     private AudioSource source;
     private float walkTimer;
 
@@ -40,6 +42,15 @@ public class PenguinController : MonoBehaviour
     {
         if (!isAlive)
         {
+            if (gameOverTimer != null)
+            {
+                gameOverTimer -= Time.deltaTime;
+                if (gameOverTimer < 0f)
+                {
+                    gameOverTimer = null;
+                    gameOverPanel.SetActive(true);
+                }
+            }
             rb.velocity = Vector2.zero;
             return;
         }
@@ -85,9 +96,7 @@ public class PenguinController : MonoBehaviour
     public void Sink()
     {
         isAlive = false;
-        gameOverPanel.SetActive(true);
-        isAlive = false;
-        gameOverPanel.SetActive(true);
+        gameOverTimer = 1f;
 
         if (animator.runtimeAnimatorController == controllerRight) animator.runtimeAnimatorController = deathRight;
         if (animator.runtimeAnimatorController == controllerBot) animator.runtimeAnimatorController = deathBot;
@@ -107,7 +116,7 @@ public class PenguinController : MonoBehaviour
         if (!isAlive)
         {
             animator.runtimeAnimatorController = null;
-            gameOverPanel.SetActive(true);
+            gameOverTimer = 1f;
         }
     }
 
