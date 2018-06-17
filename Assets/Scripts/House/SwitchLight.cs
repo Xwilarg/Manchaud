@@ -60,7 +60,7 @@ public class SwitchLight : MonoBehaviour
         currSprite = GetComponent<SpriteRenderer>();
         isOn = (currSprite.sprite == spriteOn);
         audioSrc = GetComponent<AudioSource>();
-        const float multiplicator = 2f;
+        const float multiplicator = 3f;
         switch (obj)
         {
             case Object.COMPUTER:
