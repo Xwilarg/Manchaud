@@ -5,6 +5,8 @@ public class Fish : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Score score;
+    [SerializeField]
+    private GameObject popup;
 
     private void Start()
     {
@@ -18,6 +20,7 @@ public class Fish : MonoBehaviour
             rb.drag = 5f;
         else if (collision.CompareTag("Player"))
         {
+            Instantiate(popup, transform.position, Quaternion.identity);
             score.AddScore(25f);
             Destroy(gameObject);
         }
