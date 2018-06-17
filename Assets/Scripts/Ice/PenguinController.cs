@@ -101,6 +101,8 @@ public class PenguinController : MonoBehaviour
 
     public void SetAlive(bool state)
     {
+        if (!killable)
+            return;
         isAlive = state;
         if (!isAlive)
         {
@@ -111,8 +113,6 @@ public class PenguinController : MonoBehaviour
 
     public bool IsAlive()
     {
-        if (!killable)
-            return true;
         return isAlive;
     }
 }
