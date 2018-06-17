@@ -294,14 +294,14 @@ MonoBehaviour:
   swimSound: {fileID: 8300000, guid: fabc98ebead44af42b282bd2e919ff79, type: 3}
   attackSound: {fileID: 8300000, guid: c59c2aab2dad17a42a9e6b8df65592c2, type: 3}
   slideSound: {fileID: 8300000, guid: 33d49d38d67548f45950693d47eaacd1, type: 3}
-  spriteS: {fileID: 21300000, guid: 3e3ea501413417543bd4635873b87d7e, type: 3}
-  spriteN: {fileID: 21300000, guid: c5932f8ef018fe04e8be7aec13f0eacf, type: 3}
-  spriteW: {fileID: 21300000, guid: cd5a8eb43d65cf541b3ec1fa979eefe5, type: 3}
-  spriteE: {fileID: 21300000, guid: 806b5dab52ed3e940a02dfcfc84f8be5, type: 3}
-  spriteNE: {fileID: 21300000, guid: da06c92472f0a944da1bde5e8ae26339, type: 3}
-  spriteSE: {fileID: 21300000, guid: d16c46121122e4248b0668dc0b79f5f8, type: 3}
-  spriteNW: {fileID: 21300000, guid: ce8baa616da713648a7503c594fe6964, type: 3}
-  spriteSW: {fileID: 21300000, guid: f102a874f6820394da4a830081d58119, type: 3}
+  spriteS: {fileID: 1880248410661258, guid: 2e77a7265cf33ca4080859171fe48eaa, type: 2}
+  spriteN: {fileID: 1807535011155538, guid: 319ffdf7f3112e244bfd7bcccd7c426c, type: 2}
+  spriteW: {fileID: 1559316862835092, guid: 8bae1c00afc7ccb47a5cfdb0c419bbeb, type: 2}
+  spriteE: {fileID: 1881082680506288, guid: 22e40632b599e8d40bc14d8f2f956f69, type: 2}
+  spriteNE: {fileID: 1829244477051766, guid: 5173fb6c33b3ffc43ba37b14601d3828, type: 2}
+  spriteSE: {fileID: 1772674896449576, guid: 7c671505a73841d45819afa4da4cce73, type: 2}
+  spriteNW: {fileID: 1229888599723454, guid: e50771b24c91303488f6d8b7d8effe15, type: 2}
+  spriteSW: {fileID: 1122669549204056, guid: 4fe37eca761ccd042804eb946d68022c, type: 2}
   hiddenS: {fileID: 21300000, guid: 015aa475a8e9e134e999b3fe142a2292, type: 3}
   hiddenN: {fileID: 21300000, guid: 47db503d17452094e810a09ef13f4bbb, type: 3}
   hiddenW: {fileID: 21300000, guid: f1c832f0b59eb3a4dbcfbee4e0d7e753, type: 3}

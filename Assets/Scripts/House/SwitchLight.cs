@@ -85,8 +85,8 @@ public class SwitchLight : MonoBehaviour
 
     public float GetConso()
     {
-        if (obj == Object.RADIATOR)
-            return (secConso + (rawConso * Time.deltaTime * 2f));
+        //if (obj == Object.RADIATOR)
+        //    return (secConso + (rawConso * Time.deltaTime * 2f));
         if (isOn)
             return (secConso);
         return (0f);

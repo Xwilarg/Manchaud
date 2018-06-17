@@ -29,21 +29,21 @@ public class OrcController : MonoBehaviour
     private AudioClip slideSound;
     [Header("Sprites")]
     [SerializeField]
-    private Sprite spriteS;
+    private GameObject spriteS;
     [SerializeField]
-    private Sprite spriteN;
+    private GameObject spriteN;
     [SerializeField]
-    private Sprite spriteW;
+    private GameObject spriteW;
     [SerializeField]
-    private Sprite spriteE;
+    private GameObject spriteE;
     [SerializeField]
-    private Sprite spriteNE;
+    private GameObject spriteNE;
     [SerializeField]
-    private Sprite spriteSE;
+    private GameObject spriteSE;
     [SerializeField]
-    private Sprite spriteNW;
+    private GameObject spriteNW;
     [SerializeField]
-    private Sprite spriteSW;
+    private GameObject spriteSW;
     [SerializeField]
     private Sprite hiddenS;
     [SerializeField]
@@ -61,7 +61,7 @@ public class OrcController : MonoBehaviour
     [SerializeField]
     private Sprite hiddenSW;
 
-    private Dictionary<Vector2Int, Sprite> allSprites;
+    private Dictionary<Vector2Int, GameObject> allSprites;
     private Dictionary<Vector2Int, Sprite> allHidens;
     private SpriteRenderer sr;
     private PolygonCollider2D coll;
@@ -94,7 +94,7 @@ public class OrcController : MonoBehaviour
 
     private void Start()
     {
-        allSprites = new Dictionary<Vector2Int, Sprite>()
+        allSprites = new Dictionary<Vector2Int, GameObject>()
         {
             { new Vector2Int(0, -1), spriteS },
             { new Vector2Int(0, 1), spriteN },
@@ -121,7 +121,7 @@ public class OrcController : MonoBehaviour
         {
             nodes.Add(go.GetComponent<Node>());
         }
-        firstNode = nodes[0];
+        firstNode = GoClosest();
         nextNode = firstNode.GetNextNode();
         rb = GetComponent<Rigidbody2D>();
         SetAttackTimer();
@@ -205,11 +205,29 @@ public class OrcController : MonoBehaviour
         jumpTimer -= Time.deltaTime;
         if (jumpTimer < 0f)
         {
-            sr.sprite = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
+            GameObject go = allSprites[new Vector2Int(GetXDirection(player.transform.position), GetYDirection(player.transform.position))];
+            sr.sprite = go.GetComponent<SpriteRenderer>().sprite;
+            sr.GetComponent<PolygonCollider2D>().points = go.GetComponent<PolygonCollider2D>().points;
             rb.AddForce(-jumpDir * jumpForce, ForceMode2D.Impulse);
             killTimer = jumpTime;
             SetSound(Action.slide);
         }
+    }
+
+    private Node GoClosest()
+    {
+        float? minDistance = null;
+        Node next = null;
+        foreach (Node n in nodes)
+        {
+            float currDistance = Vector2.Distance(transform.position, n.transform.position);
+            if (minDistance == null || currDistance < minDistance)
+            {
+                minDistance = currDistance;
+                next = n;
+            }
+        }
+        return (next);
     }
 
     private void GoBackSwim()
@@ -219,16 +237,7 @@ public class OrcController : MonoBehaviour
         {
             killTimer = null;
             jumpTimer = null;
-            float? minDistance = null;
-            foreach (Node n in nodes)
-            {
-                float currDistance = Vector2.Distance(transform.position, n.transform.position);
-                if (minDistance == null || currDistance < minDistance)
-                {
-                    minDistance = currDistance;
-                    nextNode = n;
-                }
-            }
+            nextNode = GoClosest();
             SetSound(Action.swim);
         }
     }
