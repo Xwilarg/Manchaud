@@ -24,6 +24,8 @@ public class SwitchLight : MonoBehaviour
     private float currConso;
     private Room room;
 
+    [SerializeField]
+
     private PenguinController player;
 
     public Object GetObject() { return (obj); }
