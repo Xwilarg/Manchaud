@@ -31,6 +31,9 @@ public class SwitchLight : MonoBehaviour
     [SerializeField]
     private SpriteRenderer childSprite;
 
+    [SerializeField]
+    private MoveUnicorn unicorn;
+
     private PenguinController player;
 
     private float rawConso;
@@ -120,6 +123,8 @@ public class SwitchLight : MonoBehaviour
                 if (Random.Range(0, 100) < additonalStats[i])
                 {
                     currSprite.sprite = s;
+                    if (currSprite.sprite.name.Contains("UNICORN"))
+                        unicorn.Move();
                     return;
                 }
                 i++;
