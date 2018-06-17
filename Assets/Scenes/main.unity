@@ -617,6 +617,7 @@ GameObject:
   - component: {fileID: 209503870}
   - component: {fileID: 209503869}
   - component: {fileID: 209503868}
+  - component: {fileID: 209503871}
   m_Layer: 0
   m_Name: PenguinCamera
   m_TagString: MainCamera
@@ -680,6 +681,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209503871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 209503867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91d9942f7f937944b13b4caf7adfd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &210541156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,7 +2696,6 @@ MonoBehaviour:
   controllerLeft: {fileID: 9100000, guid: 5688502b7e02e4943b4ebc1b170b980c, type: 2}
   controllerRight: {fileID: 9100000, guid: 11b8d602577e9584490f2ed86dd02dbc, type: 2}
   firstFloorOffset: {x: 0, y: 0.4, z: 0}
-  secondFloorOffset: {x: 0, y: 0, z: 0}
   switchOnRate: 50
   walkingClips:
   - {fileID: 8300000, guid: 5d0229fb178a69b40bd88895b0cf9374, type: 3}
@@ -4279,7 +4290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakLimit: 5
-  breakSprite: {fileID: 21300000, guid: 6420c4f8e80b7e340843fa6674e6284c, type: 3}
+  breakSprite: {fileID: 21300000, guid: 1b47778d849ce9f4482087cb26f0e26f, type: 3}
   breakClip: {fileID: 8300000, guid: 14cbd1b4ab5634a43b3328efd34c3c41, type: 3}
 --- !u!82 &1189870126
 AudioSource:

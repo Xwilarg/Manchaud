@@ -15,18 +15,16 @@ public class Character : MonoBehaviour
     [SerializeField]
     private RuntimeAnimatorController controllerLeft, controllerRight;
     private Animator animator;
-    private SpriteRenderer sr;
     private Directions direction;
     private enum Directions { LEFT, RIGHT }
     [SerializeField]
-    private Vector3 firstFloorOffset, secondFloorOffset;
+    private Vector3 firstFloorOffset;
     [Range(0, 100)]
     [SerializeField]
     private int switchOnRate;
     [SerializeField]
     private AudioClip[] walkingClips;
     private AudioSource audioSrc;
-    private int step;
     private float timer;
     [SerializeField]
     private float waitingTime;
@@ -75,18 +73,16 @@ public class Character : MonoBehaviour
             if (room.GetDown() != null && room.GetDown() != oldRoom)
                 rb.MovePosition(room.GetDown().transform.position - firstFloorOffset);
             else if (room.GetUp() != null && room.GetUp() != oldRoom)
-                rb.MovePosition(room.GetUp().transform.position - secondFloorOffset);
+                rb.MovePosition(room.GetUp().transform.position);
         }
     }
 
     private void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         direction = Directions.RIGHT;
         audioSrc = GetComponent<AudioSource>();
-        step = 0;
         timer = 1f;
 	}
 
