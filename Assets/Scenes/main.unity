@@ -5272,6 +5272,7 @@ MonoBehaviour:
   deathTopLeft: {fileID: 9100000, guid: 115558c13040f204f934ea4030aa5bd3, type: 2}
   deathTop: {fileID: 9100000, guid: 115558c13040f204f934ea4030aa5bd3, type: 2}
   deathTopRight: {fileID: 9100000, guid: f49d5ab74b314ae4e87982936468041d, type: 2}
+  killable: 1
 --- !u!61 &1436816104
 BoxCollider2D:
   m_ObjectHideFlags: 0
