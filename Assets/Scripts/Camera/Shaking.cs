@@ -4,20 +4,28 @@
 public class Shaking : MonoBehaviour
 {
     private Vector3 tremblement;
+    private Vector3 basePosition;
+    [Range(0, 1)]
+    [SerializeField]
+    private float intensity;
+    private float duration;
 
-	private void Update ()
+    private void Start()
     {
-        Vector3 target = new Vector3();
-        transform.position = tremblement;
+        basePosition = transform.position;
+        duration = 0f;
+    }
 
-        if (tremblement.magnitude <= target.magnitude + 0.1 && tremblement.magnitude >= target.magnitude - 0.1)
-        {
-            target = Random.insideUnitCircle;
-            target.x -= 21.52f;
-        }
+    private void Update()
+    {
+        transform.position = basePosition;
+        if (duration > 0f)
+            transform.position += Random.insideUnitSphere * intensity;
+        duration -= Time.deltaTime;
+    }
 
-        tremblement.x = Mathf.SmoothStep(tremblement.x, target.x, Time.deltaTime * 200);
-        tremblement.y = Mathf.SmoothStep(tremblement.y, target.y, Time.deltaTime * 200);
-        tremblement.z = Mathf.SmoothStep(tremblement.z, target.z, Time.deltaTime * 200);
+    public void Shake(float dur)
+    {
+        duration = dur;
     }
 }

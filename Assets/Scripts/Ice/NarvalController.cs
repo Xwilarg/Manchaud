@@ -17,6 +17,9 @@ public class NarvalController : MonoBehaviour
 
     private AudioSource source;
 
+    [SerializeField]
+    private Camera penguinCamera;
+
     GameObject curr;
 
     private void GenerateTimer()
@@ -49,6 +52,7 @@ public class NarvalController : MonoBehaviour
             timerAim -= Time.deltaTime;
             if (timerAim < 0f)
             {
+                penguinCamera.GetComponent<Shaking>().Shake(0.5f);
                 Vector3 pos = curr.transform.position;
                 Destroy(curr);
                 source.clip = perceClip;
