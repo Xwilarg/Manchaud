@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &284927515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2571,6 +2571,7 @@ MonoBehaviour:
   orca: {fileID: 1588091241657940, guid: 222b5fd3701b0514eb69986c5fc16190, type: 2}
   penguinCamera: {fileID: 209503869}
   houseCamera: {fileID: 519420031}
+  ice: {fileID: 0}
 --- !u!114 &1360761729
 MonoBehaviour:
   m_ObjectHideFlags: 0

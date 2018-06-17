@@ -15,6 +15,8 @@ public class Tutorial : MonoBehaviour {
     private GameObject orca;
     [SerializeField]
     private Camera penguinCamera, houseCamera;
+    [SerializeField]
+    private GameObject ice;
 
 	private void Start ()
     {
