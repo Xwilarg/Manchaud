@@ -7,11 +7,17 @@ public class Fish : MonoBehaviour
     private Score score;
     [SerializeField]
     private GameObject popup;
+    [SerializeField]
+    private AudioClip outOfWaterClip, beingEatClip;
+    private AudioSource source;
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         score = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<Score>();
+        source.clip = outOfWaterClip;
+        source.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +28,10 @@ public class Fish : MonoBehaviour
         {
             Instantiate(popup, transform.position, Quaternion.identity);
             score.AddScore(25f);
-            Destroy(gameObject);
+            source.clip = outOfWaterClip;
+            source.Play();
+            transform.position = new Vector2(-100f, -100f);
+            Destroy(gameObject, source.clip.length);
         }
     }
 

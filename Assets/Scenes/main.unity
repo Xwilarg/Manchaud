@@ -4573,7 +4573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d268b307a4da7854eb45c830d04d45db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 120
   movSounds:
   - {fileID: 8300000, guid: 61b350b9f3463814ba67f02ed8d6fa68, type: 3}
   - {fileID: 8300000, guid: 8b8c0625e18f8a34bad2380a2d85dc0c, type: 3}
