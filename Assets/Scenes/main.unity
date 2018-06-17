@@ -1975,7 +1975,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 502142841}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d756165d8f58fa14a907ae2d3a5b3d62, type: 3}
   m_Name: 
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   fish: {fileID: 1850080054387138, guid: 7137d3824f7835145b6b6f6e2e89c4ee, type: 2}
   dest: {fileID: 2135366945}
   minDist: 5
-  maxDist: 20
+  maxDist: 40
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,7 +3602,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014545014}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d756165d8f58fa14a907ae2d3a5b3d62, type: 3}
   m_Name: 
@@ -3610,7 +3610,7 @@ MonoBehaviour:
   fish: {fileID: 1850080054387138, guid: 7137d3824f7835145b6b6f6e2e89c4ee, type: 2}
   dest: {fileID: 2135366945}
   minDist: 5
-  maxDist: 20
+  maxDist: 40
 --- !u!1 &1025782635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,7 +3624,7 @@ GameObject:
   - component: {fileID: 1025782637}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: ScoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3644,7 +3644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 113.899994, y: -34}
+  m_AnchoredPosition: {x: -110.8, y: -34}
   m_SizeDelta: {x: 160, y: 60.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025782637
@@ -3671,7 +3671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3680,12 +3680,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4319,7 +4319,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1352474931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d756165d8f58fa14a907ae2d3a5b3d62, type: 3}
   m_Name: 
@@ -4327,7 +4327,7 @@ MonoBehaviour:
   fish: {fileID: 1850080054387138, guid: 7137d3824f7835145b6b6f6e2e89c4ee, type: 2}
   dest: {fileID: 2135366945}
   minDist: 5
-  maxDist: 20
+  maxDist: 40
 --- !u!1001 &1381758987
 Prefab:
   m_ObjectHideFlags: 0
@@ -4387,7 +4387,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1404981563}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d756165d8f58fa14a907ae2d3a5b3d62, type: 3}
   m_Name: 
@@ -4395,7 +4395,7 @@ MonoBehaviour:
   fish: {fileID: 1850080054387138, guid: 7137d3824f7835145b6b6f6e2e89c4ee, type: 2}
   dest: {fileID: 2135366945}
   minDist: 5
-  maxDist: 20
+  maxDist: 40
 --- !u!1001 &1407657473
 Prefab:
   m_ObjectHideFlags: 0
@@ -4454,7 +4454,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1407708639}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d756165d8f58fa14a907ae2d3a5b3d62, type: 3}
   m_Name: 
@@ -4462,7 +4462,7 @@ MonoBehaviour:
   fish: {fileID: 1850080054387138, guid: 7137d3824f7835145b6b6f6e2e89c4ee, type: 2}
   dest: {fileID: 2135366945}
   minDist: 5
-  maxDist: 20
+  maxDist: 40
 --- !u!1 &1436816099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5524,7 +5524,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1828346449}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d756165d8f58fa14a907ae2d3a5b3d62, type: 3}
   m_Name: 
@@ -5532,7 +5532,7 @@ MonoBehaviour:
   fish: {fileID: 1850080054387138, guid: 7137d3824f7835145b6b6f6e2e89c4ee, type: 2}
   dest: {fileID: 2135366945}
   minDist: 5
-  maxDist: 20
+  maxDist: 40
 --- !u!1001 &1830904933
 Prefab:
   m_ObjectHideFlags: 0

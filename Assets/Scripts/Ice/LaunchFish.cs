@@ -7,6 +7,7 @@ public class LaunchFish : MonoBehaviour
     [SerializeField]
     private float minDist, maxDist;
     private float timer;
+    private PenguinController player;
 
     private void GenerateTimer()
     {
@@ -16,10 +17,13 @@ public class LaunchFish : MonoBehaviour
     private void Start()
     {
         GenerateTimer();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
     }
 
     private void Update()
     {
+        if (!player.IsAlive())
+            return;
         timer -= Time.deltaTime;
         if (timer < 0f)
         {

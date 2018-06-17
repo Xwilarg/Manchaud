@@ -4,24 +4,28 @@
 public class Fish : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Score score;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("BB");
+        score = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<Score>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("AA");
         if (collision.CompareTag("Ice"))
-        {
             rb.drag = 5f;
-            Debug.Log("TE");
+        else if (collision.CompareTag("Player"))
+        {
+            score.AddScore(25f);
+            Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+      if (other.CompareTag("Ice"))
+            Destroy(gameObject);
     }
 }
