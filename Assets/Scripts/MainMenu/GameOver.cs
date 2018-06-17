@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
-        text = GetComponentsInChildren<Text>()[3];
+        text = GetComponentsInChildren<Text>()[0];
         score = FindObjectOfType<Score>();
     }
     private void Update()

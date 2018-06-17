@@ -15,6 +15,11 @@ public class Score : MonoBehaviour
     private Text text;
     private Save save;
 
+    public void AddScore(float newScore)
+    {
+        score += newScore;
+    }
+
     private void Start()
     {
         score = 0;

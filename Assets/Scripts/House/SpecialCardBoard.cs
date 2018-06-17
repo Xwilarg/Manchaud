@@ -21,7 +21,7 @@ public class SpecialCardBoard : MonoBehaviour {
         hits = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
-        am = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<AchievementManager>();
+        //am = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<AchievementManager>();
 	}
 
     private void OnMouseDown()

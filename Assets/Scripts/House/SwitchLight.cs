@@ -31,6 +31,9 @@ public class SwitchLight : MonoBehaviour
     [SerializeField]
     private SpriteRenderer childSprite;
 
+    [SerializeField]
+    private MoveUnicorn unicorn;
+
     private PenguinController player;
 
     private float rawConso;
@@ -57,7 +60,7 @@ public class SwitchLight : MonoBehaviour
         currSprite = GetComponent<SpriteRenderer>();
         isOn = (currSprite.sprite == spriteOn);
         audioSrc = GetComponent<AudioSource>();
-        const float multiplicator = 2f;
+        const float multiplicator = 3f;
         switch (obj)
         {
             case Object.COMPUTER:
@@ -120,6 +123,8 @@ public class SwitchLight : MonoBehaviour
                 if (Random.Range(0, 100) < additonalStats[i])
                 {
                     currSprite.sprite = s;
+                    if (currSprite.sprite.name.Contains("UNICORN"))
+                        unicorn.Move();
                     return;
                 }
                 i++;

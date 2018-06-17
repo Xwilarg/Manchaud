@@ -28,7 +28,7 @@ public class WattManager : MonoBehaviour
         music = GetComponent<MusicManager>();
         size = MusicManager.Size.Low;
         music.Play(MusicManager.Size.Low, 0f);
-        am = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<AchievementManager>();
+        //am = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<AchievementManager>();
         timer = 0f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PenguinController>();
     }

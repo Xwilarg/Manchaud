@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class Hover : MonoBehaviour {
-
+public class Hover : MonoBehaviour
+{
     private bool goUp;
     private const float offset = 0.15f;
     private const float speed = 0.2f;

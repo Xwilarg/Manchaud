@@ -34,6 +34,7 @@ public class Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        SwitchLight sl = other.GetComponent<SwitchLight>();
         if (other.CompareTag("Room"))
         {
             Stop();
@@ -44,9 +45,9 @@ public class Character : MonoBehaviour
             SwitchOnDevices();
             TakeStairs();
         }
-        else if (other.GetComponent<SwitchLight>().IsDoor())
+        else if (sl != null && sl.IsDoor())
         {
-            other.GetComponent<SwitchLight>().SwitchOn();
+            sl.SwitchOn();
         }
     }
 
