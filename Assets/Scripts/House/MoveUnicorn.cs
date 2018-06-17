@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class MoveUnicorn : MonoBehaviour {
-
+public class MoveUnicorn : MonoBehaviour
+{
     private bool doesMove;
     private Vector3 basePos;
 
