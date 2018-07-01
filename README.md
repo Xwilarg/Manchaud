@@ -20,4 +20,4 @@ You lose when your penguin die.<br/>
 [**Christian 'Zirk' Chaux**](https://zirk.eu/) (Programmation)<br/>
 [**Pauline 'Blackfowl' Landais**](https://issuu.com/paulinelandais/docs/pauline_landais_book_2018) (Graphisms)<br/>
 [**Simon 'Rotul' Leschiera**](https://vimeo.com/user62744451) (Musics & sounds)<br/>
-[**Tiphaine 'Koasce' Laurent**](https://tiphaine-laurent.fr/) (Programmation)<br/>
+[**Tiphaine 'Kaosce' Laurent**](https://tiphaine-laurent.fr/) (Programmation)<br/>
