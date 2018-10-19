@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/xwilarg/manchaud/badge)](https://www.codefactor.io/repository/github/xwilarg/manchaud)<br/>
+[![CodeFactor](https://www.codefactor.io/repository/github/xwilarg/manchaud/badge)](https://www.codefactor.io/repository/github/xwilarg/manchaud) [![GuardRails badge](https://badges.production.guardrails.io/Xwilarg/Manchaud.svg)](https://www.guardrails.io)<br/>
 # Manchaud
 ![Game Image](https://github.com/Xwilarg/Manchaud/blob/master/Images/GameImage.png)
 
